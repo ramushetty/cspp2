@@ -18,7 +18,7 @@ public final class Solution {
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
-        int result = power(base, exponent);
+        long result = power(base, exponent);
         System.out.println(result);
     }
     /*
@@ -27,13 +27,13 @@ public final class Solution {
     /**
      * { function_description }.
      *
-     * @param      b     { parameter_description }
-     * @param      e     { parameter_description }
+     * @param      b     { base }
+     * @param      e     { exponenet }
      *
-     * @return     { description_of_the_return_value }
+     * @return     { the_return_value }
      */
 
-    static int power(final int b, final int e) {
+    static long power(final long b, final int e) {
         if (e != 0) {
             return (b * power(b, e - 1));
         } else {
