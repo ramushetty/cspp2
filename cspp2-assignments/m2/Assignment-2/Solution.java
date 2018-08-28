@@ -1,6 +1,11 @@
 import java.util.Scanner;
-
+/**
+ * { main }.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         // empty.
     }
