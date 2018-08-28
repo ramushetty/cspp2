@@ -6,6 +6,9 @@ public final class Solution {
     /*
     Do not modify this main function.
     */
+    private Solution() {
+        // empty.
+    }
     /**
      *
      * @param      args  The arguments
@@ -37,3 +40,4 @@ public final class Solution {
         }
     }
 }
+
