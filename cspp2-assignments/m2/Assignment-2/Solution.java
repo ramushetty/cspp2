@@ -30,6 +30,7 @@ public final class Solution {
 		double x2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
 		System.out.println(x1);
 		double root1 = (a * (x1 * x1)) + (b * x1) + c;
+		System.out.println(root1);
 		double root2 = (a * (x2 * x2)) + (b * x2) + c;
 		System.out.println(root1 + " " + root2);
 	}
