@@ -19,17 +19,17 @@ public final class Solution {
 	/**
 	 * { function calling }.
 	 *
-	 * @param      a
-	 * @param      b
-	 * @param      c
+	 * @param      a {a} 
+	 * @param      b {b}
+	 * @param      c {c}
 	 *
 	 * @return     { return_value }
 	 */
-	public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-		double x1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
-		double x2 = (-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
-		double root1 = (a * (x1 * x1)) + (b * x1) + c;
-		double root2 = (a * (x2 * x2)) + (b * x2) + c;
+	static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
+		double x1 = (-b + Math.sqrt((b * b) - ((2 * 2) * a * c))) / (2 * a);
+		double x2 = (-b - Math.sqrt((b * b) - ((2 * 2) * a * c))) / (2 * a);
+		//double root1 = (a * (x1 * x1)) + (b * x1) + c;
+		//double root2 = (a * (x2 * x2)) + (b * x2) + c;
 		System.out.println(x1 + " " + x2);
 	}
 }
