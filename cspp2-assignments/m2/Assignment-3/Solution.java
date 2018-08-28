@@ -3,9 +3,10 @@ import java.util.Scanner;
  * class.
  */
 public final class Solution {
-    /*
-    Do not modify this main function.
-    */
+    /**
+     * Constructs the object.
+     */
+
     private Solution() {
         // empty.
     }
