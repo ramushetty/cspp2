@@ -5,11 +5,11 @@ import java.util.Scanner;
     */
 /**
  * Class for solution.
- * author ramu 
+ * author ramu
  * roll number 20186082
  * date 29/08/2018
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -30,12 +30,12 @@ public class Solution {
  *
  * @param      args  The arguments
  */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
-        for (int i = 1 ;i < n ;i++) {
+        for (int i = 1; i < n; i++) {
             int j = i;
             while (j > 0) {
                 int re = j % NUM1;
