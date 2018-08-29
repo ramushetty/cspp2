@@ -38,9 +38,9 @@ public class Solution {
     public static int gcd(final int n1, final int n2) {
         int k =0;
 
-        for (int i = 1; i<=n1; i++) {
+        for (int i = 1; i <= n1; i++) {
 
-            if ((n1%i==0) && (n2%i==0)) {
+            if ((n1 % i == 0) && (n2 % i == 0)) {
 
                 k = i;
             } 
