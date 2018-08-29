@@ -46,10 +46,9 @@ public final class Solution {
             if ((n1 % i == 0) && (n2 % i == 0)) {
 
                 k = i;
-            } 
+            }
 
         }
         return k;
     }
 }
-
