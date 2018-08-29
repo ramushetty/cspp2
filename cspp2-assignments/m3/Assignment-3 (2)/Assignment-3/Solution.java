@@ -6,7 +6,10 @@ import java.util.Scanner;
     /**
      * Class for solution.
      */
-public class Solution {
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //empty.
     }
@@ -16,7 +19,7 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
@@ -36,7 +39,7 @@ public class Solution {
      * @return     { description_of_the_return_value }
      */
     public static int gcd(final int n1, final int n2) {
-        int k =0;
+        int k = 0;
 
         for (int i = 1; i <= n1; i++) {
 
