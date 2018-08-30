@@ -6,9 +6,16 @@ import java.util.Scanner;
  * roll number : 20186082
  * date : 30/08/2018
  */
-public final class Solution {/*
+public final class Solution {
+    /*
     Fill this main function to print maximum of given array
     */
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //empty.
+    }
     /**
      * { main }.
      *
