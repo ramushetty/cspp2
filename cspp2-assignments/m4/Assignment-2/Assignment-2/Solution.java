@@ -50,7 +50,7 @@ public final class Solution {
 				System.out.print(coll + " ");
 			}
 			System.out.println();
-	}
+		}
 	} else {
 		System.out.println("not possible");
 	}	
