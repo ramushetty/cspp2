@@ -1,5 +1,5 @@
 
-import java.util.*;
+import java.util.Scanner;
 /**
  * Class for solution.
  * author : ramu 
