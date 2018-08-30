@@ -44,11 +44,11 @@ public final class Solution {
 			add[i][j] = mat1[i][j] + mat2[i][j];
 		}
 	}
-	for (int[] roww : add) {
-		for (int coll : roww) {
-			System.out.print(coll + " ");
+	for(int i = 0; i < row1; i++) {
+		for (int j = 0; j < col1 - 1; j++) {
+			System.out.print(add[row1][col1] + " ");
 		}
-		System.out.println();
+		System.out.println(add[row1][col1-1]);
 	}
 	}
 }
