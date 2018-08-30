@@ -38,17 +38,21 @@ public final class Solution {
 		}
 	//System.out.println(Arrays.deepToString(mat2));
 	}
-	int[][] add = new int[row][col];
-	for (int i = 0; i<mat1.length; i++) {
-		for (int j = 0; j<mat2.length; j++) {
-			add[i][j] = mat1[i][j] + mat2[i][j];
+	if ((row == row1) || (col == col1)) {
+		int[][] add = new int[row][col];
+		for (int i = 0; i<mat1.length; i++) {
+			for (int j = 0; j<mat2.length; j++) {
+				add[i][j] = mat1[i][j] + mat2[i][j];
+			}
 		}
-	}
-	for(int i = 0; i < row1; i++) {
-		for (int j = 0; j < col1 - 1; j++) {
-			System.out.print(add[i][j] + " ");
+		for(int i = 0; i < row1; i++) {
+			for (int j = 0; j < col1 - 1; j++) {
+				System.out.print(add[i][j] + " ");
+			}
+			System.out.println(add[i][col1-1]);
 		}
-		System.out.println(add[i][col1-1]);
+	} else {
+		System.out.println("not possible");
 	}
 	}
 }
