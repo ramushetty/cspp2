@@ -39,17 +39,17 @@ public final class Solution {
 	//System.out.println(Arrays.deepToString(mat2));
 	}
 	if (mat1[row].length == mat2[col1].length) {
-	int[][] add = new int[row][col];
-	for (int i = 0; i<mat1.length; i++) {
-		for (int j = 0; j<mat2.length; j++) {
-			add[i][j] = mat1[i][j] + mat2[i][j];
+		int[][] add = new int[row][col];
+		for (int i = 0; i<mat1.length; i++) {
+			for (int j = 0; j<mat2.length; j++) {
+				add[i][j] = mat1[i][j] + mat2[i][j];
+			}
 		}
-	}
-	for (int[] roww : add) {
-		for (int coll : roww) {
-			System.out.print(coll + " ");
-		}
-		System.out.println();
+		for (int[] roww : add) {
+			for (int coll : roww) {
+				System.out.print(coll + " ");
+			}
+			System.out.println();
 	}
 	} else {
 		System.out.println("not possible");
