@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 /**
  * Class for solution.
  * author ramu
@@ -23,8 +23,8 @@ public final class Solution {
 	int row = s.nextInt();
 	int col	= s.nextInt();
 	int[][] mat1 = new int[row][col];
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < col; j++){
+	for (int i = 0; i<mat1.length; i++) {
+		for (int j = 0; j<mat1.length; j++){
 			mat1[i][j] = s.nextInt();
 		}
 	//System.out.println(Arrays.deepToString(mat1));
@@ -32,31 +32,23 @@ public final class Solution {
 	int row1 = s.nextInt();
 	int col1 = s.nextInt();
 	int[][] mat2 = new int[row1][col1];
-	if (mat1[row].length == mat2[col1].length) {
-		for (int i = 0; i < row1; i++) {
-			for (int j = 0; j < col1; j++){
-				mat2[i][j] = s.nextInt();
-			}
+	for (int i = 0; i<mat2.length; i++) {
+		for (int j = 0; j<mat2.length; j++){
+			mat2[i][j] = s.nextInt();
 		}
 	//System.out.println(Arrays.deepToString(mat2));
-	} else {
-		System.out.println("not possible");
 	}
-	if (mat1[row].length == mat2[col1].length) {
-		int[][] add = new int[row][col];
-		for (int i = 0; i < mat1.length; i++) {
-			for (int j = 0; j < mat2.length; j++) {
-				add[i][j] = mat1[i][j] + mat2[i][j];
-			}
+	int[][] add = new int[row][col];
+	for (int i = 0; i<mat1.length; i++) {
+		for (int j = 0; j<mat2.length; j++) {
+			add[i][j] = mat1[i][j] + mat2[i][j];
 		}
-		for (int[] roww : add) {
-			for (int coll : roww) {
-				System.out.print(coll + " ");
-			}
-			System.out.println();
+	}
+	for (int[] roww : add) {
+		for (int coll : roww) {
+			System.out.print(coll + " ");
 		}
-	} else {
-		System.out.println("not possible");
-	}	
+		System.out.println();
+	}
 	}
 }
