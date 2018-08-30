@@ -23,8 +23,8 @@ public final class Solution {
 	int row = s.nextInt();
 	int col	= s.nextInt();
 	int[][] mat1 = new int[row][col];
-	for (int i = 0; i < mat1.length; i++) {
-		for (int j = 0; j < mat1.length; j++){
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++){
 			mat1[i][j] = s.nextInt();
 		}
 	//System.out.println(Arrays.deepToString(mat1));
