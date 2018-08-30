@@ -33,8 +33,8 @@ public final class Solution {
 	int col1 = s.nextInt();
 	int[][] mat2 = new int[row1][col1];
 	if (mat1[row].length == mat2[col1].length) {
-		for (int i = 0; i < mat2.length; i++) {
-			for (int j = 0; j < mat2.length; j++){
+		for (int i = 0; i < row1; i++) {
+			for (int j = 0; j < col1; j++){
 				mat2[i][j] = s.nextInt();
 			}
 		}
