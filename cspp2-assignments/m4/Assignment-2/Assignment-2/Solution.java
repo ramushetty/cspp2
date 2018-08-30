@@ -32,8 +32,8 @@ public final class Solution {
 	int row1 = s.nextInt();
 	int col1 = s.nextInt();
 	int[][] mat2 = new int[row1][col1];
-	for (int i = 0; i<mat2.length; i++) {
-		for (int j = 0; j<mat2.length; j++){
+	for (int i = 0; i<row1; i++) {
+		for (int j = 0; j<col1; j++){
 			mat2[i][j] = s.nextInt();
 		}
 	//System.out.println(Arrays.deepToString(mat2));
