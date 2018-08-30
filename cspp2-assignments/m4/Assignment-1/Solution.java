@@ -2,7 +2,7 @@
 import java.util.Scanner;
 /**
  * Class for solution.
- * author : ramu 
+ * author : ramu
  * roll number : 20186082
  * date : 30/08/2018
  */
