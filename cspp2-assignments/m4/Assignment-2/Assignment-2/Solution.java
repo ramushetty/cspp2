@@ -48,7 +48,7 @@ public final class Solution {
 		for (int j = 0; j < col1 - 1; j++) {
 			System.out.print(add[i][j] + " ");
 		}
-		System.out.println(add[row1][col1-1]);
+		System.out.println(add[i][col1-1]);
 	}
 	}
 }
