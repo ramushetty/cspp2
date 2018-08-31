@@ -42,13 +42,13 @@ public final class Solution { /*
         String bi = str;
         int k = 0;
         int binary = 0;
-        for (int i = bi.length()-1; i >= 0 ; i--) {
+        for (int i = bi.length() - 1; i >= 0; i--) {
             if (bi.charAt(i) == '1') {
                 binary += Math.pow(2, k);
 
             }
             k++;
-        } 
+        }
     return binary;
     }
 
