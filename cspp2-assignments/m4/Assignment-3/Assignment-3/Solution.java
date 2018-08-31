@@ -25,7 +25,7 @@ public final class Solution { /*
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             String s = sc.next();
             int res = binaryToDecimal(s);
             System.out.println(res);
@@ -40,11 +40,16 @@ public final class Solution { /*
      */
     static int binaryToDecimal(final String str) {
         String bi = str;
-        // for (i = 0;i<bi.length()-1;i++) {
+        int k = 0;
+        int binary = 0;
+        for (int i = bi.length()-1; i >= 0 ; i--) {
+            if (bi.charAt(i) == '1') {
+                binary += Math.pow(2, k);
 
-        // }
-        int i = Integer.parseInt(bi, 2);
-    return i;
+            }
+            k++;
+        } 
+    return binary;
     }
 
 }
