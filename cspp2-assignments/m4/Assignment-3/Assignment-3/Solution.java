@@ -6,21 +6,24 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution
-{/*
+public final class Solution {/*
 	Do not modify this main function.
 	*/
 	/**
 	 * Constructs the object.
 	 */
-	private Solution(){
+	private Solution() {
 		//empty.
 	}
-	public static void main(String[] args)
-	{
+	/**
+	 * { function_description }.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		for(int i = 0; i < n; i++){
+		for(int i = 0; i < n; i++) {
 			String s = sc.next();
 			int res = binaryToDecimal(s);//Write binaryToDecimal function
 			System.out.println(res);
@@ -38,7 +41,7 @@ public class Solution
 		// for (i = 0;i<bi.length()-1;i++) {
 
 		// }
-		int i = Integer.parseInt(bi,2);
+		int i = Integer.parseInt(bi, 2);
 	return i;
 	}
 
