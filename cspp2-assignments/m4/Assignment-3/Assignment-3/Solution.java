@@ -27,7 +27,7 @@ public final class Solution { /*
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
             String s = sc.next();
-            int res = binaryToDecimal(s); 
+            int res = binaryToDecimal(s);
             System.out.println(res);
         }
     }
