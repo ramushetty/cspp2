@@ -7,6 +7,10 @@ import java.util.Scanner;
  */
 final class Solution {
     /**
+     * { var_description }.
+     */
+    public static final int NUM1 = 100, NUM2 = 50;
+    /**
      * Constructs the object.
      */
     private Solution() {
@@ -29,7 +33,7 @@ final class Solution {
         int[][] arr = new int[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j< columns; j++) {
-                if (a[i][j] < 50) {
+                if (a[i][j] < NUM2) {
                     a[i][j] = 0;
                     arr[i][j] = a[i][j];
                 //if (a[i][j] >= 50 && a[i][j] <= 100); {
@@ -37,16 +41,16 @@ final class Solution {
                   //  }
 
                 } else {
-                    if ((a[i][j] % 100) < 50) {
+                    if ((a[i][j] % NUM1) < NUM2) {
 
-                        int div = (a[i][j] / 100) *100 ;
+                        int div = (a[i][j] / NUM1) *NUM1 ;
                         arr[i][j] = div;
 
                     } else {
 
-                        if ((a[i][j] % 100) >= 50) {
+                        if ((a[i][j] % NUM1) >= NUM2) {
 
-                            int rem = ((a[i][j] / 100) *100) + 100;
+                            int rem = ((a[i][j] / NUM1) * NUM1) + NUM1;
                             arr[i][j] = rem;
                         }
                     }
