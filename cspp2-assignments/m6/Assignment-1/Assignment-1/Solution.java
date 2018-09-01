@@ -6,6 +6,7 @@ import java.util.Scanner;
  * @author : 
  */
 public final class Solution {
+    public static int NUM1 = 3;
     /**
     * Empty constructor.
     */
@@ -18,7 +19,7 @@ public final class Solution {
      //* @param      n     n value -->
      */
     // static void oddComposites(final int n) {
-	// write your code here
+    // write your code here
     // }
     /**
     * main method as driver program.
@@ -36,17 +37,17 @@ public final class Solution {
      */
     static void oddComposites(final int num) {
         int count = 0;
-        int a =1;
+        int a = 1;
         int c = 0;
         while (c < num) {
             count = 0;
             a++;
-            for (int i = 1; i<= a; i++) {
-                if (a%i == 0) {
+            for (int i = 1; i <= a; i++) {
+                if (a % i == 0) {
                     count++;
 
                 }
-            } if (count >= 3) {
+            } if (count >= NUM1) {
 
                 if (a%2 != 0) {
                     if (a <= num) {
@@ -59,4 +60,3 @@ public final class Solution {
         }
     }
 }
-
