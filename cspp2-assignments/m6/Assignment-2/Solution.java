@@ -32,6 +32,9 @@ final class Solution {
                 if (a[i][j] < 50) {
                     a[i][j] = 0;
                     arr[i][j] = a[i][j];
+                if (a[i][j] >= 50 && a[i][j] <= 100) {
+                        arr[i][j] = 100;
+                    }
 
                 } else {
                     if ((a[i][j] % 100) < 50) {
@@ -40,7 +43,9 @@ final class Solution {
                         arr[i][j] = div;
 
                     } else {
+
                         if ((a[i][j] % 100) > 50) {
+
                             int rem = (a[i][j] / 100) *100;
                             arr[i][j] = rem;
                         }
