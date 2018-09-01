@@ -34,9 +34,17 @@ final class Solution {
                     arr[i][j] = a[i][j];
 
                 } else {
+                    if ((a[i][j] % 100) < 50) {
 
-                    a[i][j] = 100 ;
-                    arr[i][j] = a[i][j];
+                        int div = (a[i][j] / 100) *100 ;
+                        arr[i][j] = div;
+
+                    } else {
+                        if ((a[i][j] % 100) > 50) {
+                            int rem = (a[i][j] / 100) *100;
+                            arr[i][j] = rem;
+                        }
+                    }
                 }
             }
 
