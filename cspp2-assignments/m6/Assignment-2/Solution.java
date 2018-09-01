@@ -44,9 +44,9 @@ final class Solution {
 
                     } else {
 
-                        if ((a[i][j] % 100) > 50) {
+                        if ((a[i][j] % 100) >= 50) {
 
-                            int rem = (a[i][j] / 100) *100;
+                            int rem = (a[i][j]+1 / 100) *100;
                             arr[i][j] = rem;
                         }
                     }
