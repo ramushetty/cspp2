@@ -62,8 +62,6 @@ final class Solution {
 
         }
         return arr;
-
-    
     }
     /**
      * Main function.
