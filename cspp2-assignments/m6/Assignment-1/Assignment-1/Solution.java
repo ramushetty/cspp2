@@ -3,10 +3,13 @@ import java.util.Scanner;
  * Write a java program to find the odd composite numbers
  * between 2 and n where n is given as an input.
  *
- * @author : 
+ * @author :
  */
 public final class Solution {
-    public static int NUM1 = 3;
+    /**
+     * { var_description }.
+     */
+    public static final int NUM1 = 3;
     /**
     * Empty constructor.
     */
@@ -49,7 +52,7 @@ public final class Solution {
                 }
             } if (count >= NUM1) {
 
-                if (a%2 != 0) {
+                if (a % 2 != 0) {
                     if (a <= num) {
                     System.out.println(a);
                     }
