@@ -20,14 +20,14 @@ final class Solution {
      * @param      charArray  The character array
      * @param      oldChar    The old character
      * @param      newChar    The new character
-     *
+     * @param      n          length
      * @return     new character array with replaced characters
      */
     static char[] replaceAll(final char[] charArray,
         final char oldChar, final char newChar, final int n) {
-	// write your code here
+    // write your code here
         char[] arr = new char[n];
-        for (int i = 0; i< n; i++) { 
+        for (int i = 0; i < n; i++) {
             if (charArray[i] == oldChar) {
                 arr[i] = newChar;
             } else {
