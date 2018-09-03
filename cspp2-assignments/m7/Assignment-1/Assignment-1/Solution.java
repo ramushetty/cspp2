@@ -3,14 +3,14 @@ import java.util.Scanner;
  * Class for input validator.
  */
 class InputValidator {
-    String data;
+    String input;
     /**
      * Constructs the object inputvalidator.
      *
      * @param      data  The data given input
      */
-    public InputValidator(final String data) {
-        this.data = data;
+    InputValidator(final String data) {
+        input = data;
     }
     /**
      * { checks the length of the given input string}.
@@ -19,7 +19,7 @@ class InputValidator {
      */
     public boolean validateData() {
         final int length = 6;
-        return data.length() >= length;
+        return input.length() >= length;
     }
 }
 /**
