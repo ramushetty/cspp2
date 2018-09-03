@@ -3,7 +3,10 @@ import java.util.Scanner;
  * Class for input validator.
  */
 class InputValidator {
-    String input;
+    /**
+     * { variable input of string type }.
+     */
+    private String input;
     /**
      * Constructs the object inputvalidator.
      *
