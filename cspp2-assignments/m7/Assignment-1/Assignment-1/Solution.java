@@ -1,16 +1,16 @@
-import java.util.*;
+import java.util.Scanner;
 /**
  * Class for input validator.
  */
 class InputValidator {
-    String input;
+    String data;
     /**
      * Constructs the object inputvalidator.
      *
      * @param      data  The data given input
      */
     public InputValidator(final String data) {
-        input = data;
+        this.data = data;
     }
     /**
      * { checks the length of the given input string}.
@@ -19,7 +19,7 @@ class InputValidator {
      */
     public boolean validateData() {
         final int length = 6;
-        return input.length() >= length;
+        return data.length() >= length;
     }
 }
 /**
@@ -33,7 +33,7 @@ public final class Solution {
         //empty.
     }
     /**
-     * { main function }
+     * { main function }.
      *
      * @param      args  The arguments
      */
