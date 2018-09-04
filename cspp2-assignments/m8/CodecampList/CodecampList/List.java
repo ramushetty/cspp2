@@ -1,7 +1,5 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//import java.util.Array;
-
 public class List {
 	//Implement all the methods mentioned to build a ListADT
 
@@ -53,11 +51,15 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    
         private int[] arr;
     	private int index;
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
+     */
+    /**
+     * list constructor.
      */
     public List() {
 
@@ -88,6 +90,11 @@ public class List {
      * 
      * The method returns void (nothing)
      */
+    /**
+     * { this add() add numbers to arr }.
+     *
+     * @param      item  The item (number which we want to add in arr)
+     */
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
         arr[index] = item;
@@ -100,6 +107,11 @@ public class List {
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * { size() returns size of arr }.
+     *
+     * @return     { returns size of array(arr) }
      */
     public int size() {
         // replace the code below to implement the size method
@@ -126,6 +138,12 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
+    /**
+     * { remove function is used to remove number present at.
+     * particular index(indx) and add remaining numbers from that place}
+     *
+     * @param      indx  The indx (index of number in array)
+     */
     public void remove(final int indx) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -150,6 +168,13 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
+     */
+    /**
+     * { here get() is used to return number present at that index}.
+     *
+     * @param      indx  The indx index of array
+     *
+     * @return     { returns number present at index in array }
      */
     public int get(final int indx) {
         // Replace the code below to write the code for get
@@ -180,6 +205,12 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the array. 
+     * containing all elements.
+     *
+     * @return     returns string .
+     */
     public String toString() {
 
         // Replace the code below
@@ -189,7 +220,7 @@ public class List {
         }
         str += arr[index - 1] + "]";
         return str;
-    } 
+    }
     
     /*
      * Contains return true if the list has
@@ -197,7 +228,14 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    /**
+     * { checks given item(number) present in array or not }.
+     *
+     * @param      item  The item (number)
+     *
+     * @return     { returns true or false }
+     */
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < index; i++) {
         	if (arr[i] == item) {
@@ -212,7 +250,15 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    /**
+     * indexOf used to return value present at particular.
+     * index in array arr
+     *
+     * @param      item  The item (nothing but index)
+     *
+     * @return     { returns value present at index(item) from array }
+     */
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < index; i++) {
         	if (arr[i] == item) {
@@ -221,8 +267,12 @@ public class List {
         }
         return -1;
     }
-
-	public static void main(String[] args) {
+    /**
+     * { main function }.
+     *
+     * @param      args  The arguments
+     */
+	public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -261,7 +311,7 @@ public class List {
 
                 if ((Integer.parseInt(tokens[1]) < l.size())) {
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
-            	}	
+            	}
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
