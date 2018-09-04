@@ -127,9 +127,19 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
-    public void remove(int index) {
+    public void remove(int indx) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
+        if (indx > size()) {
+        	System.out.println("Invalid Position Exception");
+
+        } else {
+        	for (int i = indx; i < index -1; i++) {
+        		arr[i] = arr[i+1];
+        	}
+        index--;
+        }
+        
     }
 
     /*
@@ -250,7 +260,10 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
+
+                if ((Integer.parseInt(tokens[1]) < l.size())) {
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
+            	}	
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
