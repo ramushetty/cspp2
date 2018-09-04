@@ -1,7 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+/**
+ * class List  .
+ */
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -45,15 +48,20 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-    
+        /**
+        * array declaration of integer type arr.
+        */
         private int[] arr;
-    	private int index;
+        /**
+         * { private index of integer type }.
+         */
+        private int index;
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
@@ -78,7 +86,6 @@ public class List {
         index = 0;
 
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -87,7 +94,7 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
+     *
      * The method returns void (nothing)
      */
     /**
@@ -148,12 +155,12 @@ public class List {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (indx > size()) {
-        	System.out.println("Invalid Position Exception");
+            System.out.println("Invalid Position Exception");
 
         } else {
-        	for (int i = indx; i < index - 1; i++) {
-        		arr[i] = arr[i + 1];
-        	}
+            for (int i = indx; i < index - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
         index--;
         }
     }
@@ -179,9 +186,9 @@ public class List {
     public int get(final int indx) {
         // Replace the code below to write the code for get
         for (int i = 0; i < index; i++) {
-        	if (i == indx) {
-        		return arr[i];
-        	}
+            if (i == indx) {
+                return arr[i];
+            }
         }
         return -1;
     }
@@ -206,7 +213,7 @@ public class List {
      *
      */
     /**
-     * Returns a string representation of the array. 
+     * Returns a string representation of the array.
      * containing all elements.
      *
      * @return     returns string .
@@ -216,12 +223,11 @@ public class List {
         // Replace the code below
         String str = "[";
         for (int i = 0; i < index - 1; i++) {
-        	str += arr[i] + ",";
+            str += arr[i] + ",";
         }
         str += arr[index - 1] + "]";
         return str;
     }
-    
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -238,15 +244,15 @@ public class List {
     public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < index; i++) {
-        	if (arr[i] == item) {
-        		return true;
-        	}
+            if (arr[i] == item) {
+                return true;
+            }
         }
         return false;
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
@@ -261,9 +267,9 @@ public class List {
     public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < index; i++) {
-        	if (arr[i] == item) {
-        		return i;
-        	}
+            if (arr[i] == item) {
+                return i;
+            }
         }
         return -1;
     }
@@ -272,7 +278,7 @@ public class List {
      *
      * @param      args  The arguments
      */
-	public static void main(final String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -311,12 +317,12 @@ public class List {
 
                 if ((Integer.parseInt(tokens[1]) < l.size())) {
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
-            	}
+                }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
             }
         }
-	}
+    }
 }
