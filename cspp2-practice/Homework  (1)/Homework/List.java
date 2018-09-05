@@ -286,13 +286,15 @@ public class List {
     public void add(int index,int item) {
 
          // write the logic 
-    	for (int i = size()-1; i >= index ; i++ ) {
-    		list[size+1] = list[size];
+    	for (int i = size()-1; i < 10 ; i++ ) {
+    		list[size+1] = list[i];
     		if(index == i) {
     			list[index] = item;
-    	size++;
+    			break;
+    		
     		}
     	}
+    	size++;
 
     }
     
@@ -300,7 +302,7 @@ public class List {
     public int count(int item)
     {
         int count = 0;
-        for (int i = 0; i<list.length;i++) {
+        for (int i = 0; i < list.length; i++) {
             if (item == list[i]) {
                 count++;
             }
