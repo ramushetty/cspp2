@@ -287,7 +287,7 @@ public class List {
 
          // write the logic 
     	for (int i = size - 1; i < 10 ; i-- ) {
-    		list[size + 1] = list[i];
+    		list[i + 1] = list[i];
     		if(index == i) {
     			list[index] = item;
     			break;
