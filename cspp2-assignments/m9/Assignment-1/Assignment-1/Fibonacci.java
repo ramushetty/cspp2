@@ -19,7 +19,7 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-class Fibonacci {
+final class Fibonacci {
     /**
      * Empty Constructor.
      */
