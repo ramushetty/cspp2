@@ -27,7 +27,14 @@ class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    public static List fib(int n) {
+    /**
+     * { fibnacci function }.
+     *
+     * @param      n     { n is number od fibnacci number should be print }
+     *
+     * @return     { returns list of n fibnacci numbers }
+     */
+    public static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
         int n1 = 0, n2 = 1, n3;
@@ -35,10 +42,10 @@ class Fibonacci {
         l.add(n1);
         l.add(n2);
         for (int i = 2; i < n; i++) {
-        	n3 = n1 + n2;
-        	l.add(n3);
-        	n1 = n2;
-        	n2 = n3;
+            n3 = n1 + n2;
+            l.add(n3);
+            n1 = n2;
+            n2 = n3;
         }
         return l;
     }
@@ -47,7 +54,7 @@ class Fibonacci {
      *
      * @param      args  The arguments
      */
-	public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
