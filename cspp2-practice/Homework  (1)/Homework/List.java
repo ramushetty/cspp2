@@ -233,7 +233,7 @@ public class List {
      */
     public String toString() {
         if(size == 0)
-            return "";
+            return "[]";
         String str = "[";
         int i = 0;
         for(i = 0; i < size - 1; i++) {
@@ -249,7 +249,7 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         return indexOf(item) == -1;
     }
 
@@ -258,7 +258,7 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         for(int i = 0; i < size; i++) {
             if(item == list[i])
                 return i;
@@ -267,8 +267,7 @@ public class List {
     }
    /*Inserts all the elements of specified int 
     array to the end of list*/
-    public void addAll(int items[])
-    {
+    public void addAll(final int items[]) {
         // write the logic 
         for (int i = 0; i < items.length; i++) {
         	list[size] = items[i];
@@ -283,7 +282,7 @@ public class List {
 	by moving all the elements to the right.
         The method returns void (nothing)
      */
-    public void add(int index,int item) {
+    public void add(final int index, final int item) {
 
          // write the logic 
     	for (int i = size - 1; i < 10 ; i-- ) {
@@ -299,8 +298,7 @@ public class List {
     }
     
     /* Returns the count of occurances of a given item in the list*/
-    public int count(int item)
-    {
+    public int count(int item) {
         int count = 0;
         for (int i = 0; i < list.length; i++) {
             if (item == list[i]) {
