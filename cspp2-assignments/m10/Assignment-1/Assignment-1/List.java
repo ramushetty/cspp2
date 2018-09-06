@@ -239,8 +239,9 @@ public class List {
 	 *
 	 */
 	public String toString() {
-		if (size == 0)
+		if (size == 0) {
 			return "[]";
+		}
 		String str = "[";
 		int i = 0;
 		for (i = 0; i < size - 1; i++) {
@@ -279,7 +280,7 @@ public class List {
 	 array to the end of list*/
 	public void addAll(final int items[]) {
 		// write the logic
-		if(items.length + size >= list.length) {
+		if (items.length + size >= list.length) {
 			resize();
 		}
 		for (int i = 0; i < items.length; i++) {
@@ -297,7 +298,7 @@ public class List {
 	public void add(final int index, final int item) {
 
 		// write the logic
-		if ( index < 0) {
+		if (index < 0) {
 			System.out.println("Negative Index Exception");
 		} else {
 			for (int i = size() - 1; i >= index; i--) {
@@ -312,7 +313,7 @@ public class List {
 	public int count(final int item) {
 		// write the logic
 		int count = 0;
-		for ( int i = 0; i < size ; i++) {
+		for (int i = 0; i < size; i++) {
 			if (list[i] == item) {
 				count++;
 			}
@@ -341,8 +342,10 @@ public class List {
 					if (t.length == 1) {
 						l.add(Integer.parseInt(tokens[1]));
 					} else {
-						if (t.length > 1)
-							l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+						if (t.length > 1) {
+							l.add(Integer.parseInt(t[0]),
+								Integer.parseInt(t[1]));
+						}
 					}
 				}
 				break;
@@ -352,9 +355,10 @@ public class List {
 			case "addAll":
 				if (tokens.length == 2) {
 					String[] t1 = tokens[1].split(",");
-					int temp[] = new int[t1.length];
-					for (int i = 0; i < temp.length; i++)
+					int[] temp = new int[t1.length];
+					for (int i = 0; i < temp.length; i++) {
 						temp[i] = Integer.parseInt(t1[i]);
+					}
 					l.addAll(temp);
 				}
 				break;
@@ -380,8 +384,10 @@ public class List {
 				System.out.println(l.get(Integer.parseInt(tokens[1])));
 				break;
 			case "contains":
-				System.out.println(l.contains(Integer.parseInt(tokens[1])));
+				System.out.println(
+					l.contains(Integer.parseInt(tokens[1])));
 				break;
+			default:
 			}
 		}
 	}
