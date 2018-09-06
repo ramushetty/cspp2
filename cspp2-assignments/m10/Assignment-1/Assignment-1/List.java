@@ -284,7 +284,7 @@ public class List {
     public void add(final int index, final int item) {
 
          // write the logic 
-    	for (int i = size(); i >= index; i--) {
+    	for (int i = size()-1; i >= index; i--) {
     		list[i + 1] = list[i];
     	}
     	list[index] = item;
@@ -296,7 +296,7 @@ public class List {
     {
          // write the logic 
     	int count = 0;
-    	for ( int i = 0; i < size - 1 ; i++) {
+    	for ( int i = 0; i < size ; i++) {
     		if (list[i] == item) {
     			count++;
     		}
