@@ -72,11 +72,15 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-
+    /**
+     * { variable NUM }
+     */
+    public static int NUM = 10;
 
     /**
      * list constructor.
      */
+
     public List() {
 
         // what are the two variables to be initialized here?
@@ -84,9 +88,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        
-        int num = 10;
-        list = new int[num];
+        list = new int[NUM];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -115,7 +117,7 @@ public class List {
      *
      * @param      capacity  The capacity
      */
-    public List(int capacity) {
+    public List(final int capacity) {
         size = 0;
         list = new int[capacity];
     }
@@ -137,7 +139,7 @@ public class List {
      *
      * @param      item  The item number need to add
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
         if (size == list.length) {
             resize();
@@ -352,9 +354,9 @@ public class List {
 
     /**
      * { adds numbers to list }.
-     * @param items[]
+     * @param items[] array 
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         // write the logic
         if (items.length + size >= list.length) {
             resize();
