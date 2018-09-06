@@ -73,9 +73,9 @@ public class List {
      * class variables with some default values.
      */
     /**
-     * { variable NUM }
+     * { variable NUM }.
      */
-    public static int NUM = 10;
+    private static int NUM = 10;
 
     /**
      * list constructor.
@@ -354,7 +354,7 @@ public class List {
 
     /**
      * { adds numbers to list }.
-     * @param items[] array 
+     * @param items[] array
      */
     public void addAll(final int[] items) {
         // write the logic
