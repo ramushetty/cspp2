@@ -249,7 +249,7 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         return indexOf(item) == -1;
     }
 
@@ -285,7 +285,7 @@ public class List {
 
          // write the logic 
     	for (int i = size() - 1; i >= index; i--) {
-    		list[i+1] = list[i];
+    		list[i + 1] = list[i];
     	}
     	list[index] = item;
     	size++;
@@ -296,7 +296,7 @@ public class List {
     {
          // write the logic 
     	int count = 0;
-    	for ( int i = 0; i < size-1 ; i++) {
+    	for ( int i = 0; i < size - 1 ; i++) {
     		if (list[i] == item) {
     			count++;
     		}
@@ -305,7 +305,7 @@ public class List {
     }
 
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
