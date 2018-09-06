@@ -14,7 +14,7 @@ class Student {
      *
      * @param      name  The name
      */
-    public Student(String name) { //A constructor used to initialize
+    public Student(final String name) { //A constructor used to initialize
         //the instance variables
         this.name = name;
     }
@@ -35,7 +35,7 @@ class Student {
      *
      * @return     { returns true or false }
      */
-    public boolean equals(Object other) { //This method is to check
+    public boolean equals(final Object other) { //This method is to check
         //if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
@@ -44,16 +44,31 @@ class Student {
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.name;
     }
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
-
-
-    public static void main(String[] args) {
+    /**
+     * Empty Constructer
+     */
+    private Solution() {
+        //empty
+    }
+    /**
+     * { main function }.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
@@ -173,7 +188,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Float temp[] = new Float[t1.length];
-                        for (int i = 0; i < t1.length ; i++ ) {
+                        for (int i = 0; i < t1.length; i++ ) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
                         listFloat.addAll(temp);
@@ -224,7 +239,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Character[] temp = new Character[t1.length];
-                        for (int i = 0; i < t1.length ; i++ ) {
+                        for (int i = 0; i < t1.length; i++ ) {
                             temp[i] = t1[i].charAt(0);
                         }
                         listCharacter.addAll(temp);
@@ -275,7 +290,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Double[] temp = new Double[t1.length];
-                        for (int i = 0; i < t1.length ; i++ ) {
+                        for (int i = 0; i < t1.length; i++ ) {
                             temp[i] = Double.parseDouble(t1[i]);
                         }
                         listDouble.addAll(temp);
@@ -326,7 +341,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] temp = new Student[t1.length];
-                        for (int i = 0; i < t1.length ; i++ ) {
+                        for (int i = 0; i < t1.length; i++ ) {
                             temp[i] = new Student(t1[i]);
                         }
                         listStudent.addAll(temp);
