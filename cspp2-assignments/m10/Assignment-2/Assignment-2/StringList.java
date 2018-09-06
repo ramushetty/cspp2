@@ -23,7 +23,7 @@ interface StringListInterface {
      */
     public String get(int index);
     /**
-     * { function_description }.
+     *  { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
