@@ -75,7 +75,7 @@ public class List {
     /**
      * { variable NUM }.
      */
-    private static int NUM = 10;
+    private static int num = 10;
 
     /**
      * list constructor.
@@ -88,7 +88,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[NUM];
+        list = new int[num];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -354,7 +354,7 @@ public class List {
 
     /**
      * { adds numbers to list }.
-     * @param items[] array
+     * @param items the array
      */
     public void addAll(final int[] items) {
         // write the logic
