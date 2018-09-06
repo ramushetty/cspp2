@@ -75,7 +75,7 @@ public class List {
     /**
      * { variable NUM }.
      */
-    private final static int NUM = 10;
+    private static final int NUM = 10;
 
     /**
      * list constructor.
