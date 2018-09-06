@@ -112,10 +112,10 @@ public class List<E> {
      */
     public E get(int index) {
          //Write logic for get method
-        if (index >= 0 && index < size) {
-            return list[index];
+        if (index < 0 || index >= size) {
+            return null;
         }
-        return null;
+        return list[index];
     }
     /*
      * What happens when you print an object using println?
