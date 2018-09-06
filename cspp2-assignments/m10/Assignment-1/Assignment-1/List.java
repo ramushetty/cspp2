@@ -260,8 +260,11 @@ public class List {
      */
     public int indexOf(final int item) {
         for(int i = 0; i < size; i++) {
-            if(item == list[i])
+            if(item == list[i]) {
                 return i;
+
+            } 
+           
         }
         return -1;
     }
@@ -284,6 +287,9 @@ public class List {
     public void add(final int index, final int item) {
 
          // write the logic 
+    	if ( index < 0) {
+    		System.out.println("Negative Index Exception");
+    	}
     	for (int i = size()-1; i >= index; i--) {
     		list[i + 1] = list[i];
     	}
