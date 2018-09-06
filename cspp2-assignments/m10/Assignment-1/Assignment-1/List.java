@@ -223,7 +223,7 @@ public class List {
      *
      * @param      index  The index index where element want to remove
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
@@ -247,7 +247,15 @@ public class List {
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+
+    /**
+     * { get function used to get number using index}.
+     *
+     * @param      index  The index
+     *
+     * @return     { returns number  }
+     */
+    public int get(final int index) {
         if (index < 0 || index >= size) {
             return -1;
         } else {
@@ -340,6 +348,7 @@ public class List {
 
     /**
      * { adds numbers to list }.
+     * @param items[]
      */
     public void addAll(final int items[]) {
         // write the logic
