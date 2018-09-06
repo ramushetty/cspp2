@@ -326,12 +326,12 @@ public class StringList implements StringListInterface {
         if (size == 0) {
             return "[]";
         } 
-
+        int i = 0;
         String str = "[";
-        for (int i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str += list[i] + ",";
         }
-        str = str + "]";
+        str = str + list[i] + "]";
         return str;
         
 
