@@ -203,6 +203,10 @@ public class StringList implements StringListInterface {
         if ((size + items.length) >= list.length) {
             resize();
         }
+        for (int i = 0; i < items.length; i++) {
+            list[size] = items[i];
+            size++;
+        }
 
 
     }
@@ -366,7 +370,7 @@ public class StringList implements StringListInterface {
      * @return     { description_of_the_return_value }
      */
     public int indexOf(final String item) {
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size; i++) {
             if (list[i] == item) {
                 return i;
             }
