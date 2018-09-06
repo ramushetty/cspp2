@@ -58,7 +58,7 @@ class Student {
  */
 public class Solution {
     /**
-     * Empty Constructer
+     * Empty Constructer.
      */
     private Solution() {
         //empty
@@ -194,7 +194,7 @@ public class Solution {
                 case "addAll":
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
-                        Float temp[] = new Float[t1.length];
+                        Float[] temp = new Float[t1.length];
                         for (int i = 0; i < t1.length; i++) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
@@ -347,7 +347,8 @@ public class Solution {
             }
             break;
 
-        case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+        case "O"://This case will be executed for Student type list
+        //i.e to store List of Student Objects
             List<Student> listStudent = new List();
             while (stdin.hasNext()) {
                 // read the line
@@ -397,6 +398,8 @@ public class Solution {
                     System.out.println(listStudent.contains(
                       new Student(tokens[1])));
                     break;
+                default:
+                  break;
                 }
             }
             break;
