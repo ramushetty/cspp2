@@ -12,7 +12,7 @@ public final class Solution {
     }
 
     /**
-     * { function_description }.
+     * { main function }.
      *
      * @param      args  The arguments
      */
