@@ -285,7 +285,6 @@ public class List {
 
          // write the logic 
     	for (int i = size() - 1; i >= index; i--) {
-    		System.out.println(item);
     		list[i+1] = list[i];
     	}
     	list[index] = item;
