@@ -251,10 +251,14 @@ public class StringList implements StringListInterface {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        for (int i = index; i < size-1; i++) {
-            list[i] = list[i+1];
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size-1; i++) {
+                list[i] = list[i+1];
+            }
+            size--;
+        } else {
+            System.out.println("Invalid Position Exception");
         }
-        size--;
 
 
     }
@@ -280,7 +284,7 @@ public class StringList implements StringListInterface {
      * @return     { description_of_the_return_value }
      */
     public String get(int index) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index >= size) {
             return "-1";
         } else {
             return list[index];
@@ -317,14 +321,15 @@ public class StringList implements StringListInterface {
     public String toString() {
         if (size == 0) {
             return "[]";
-        } else {
-            String str = "[";
-            for (int i = 0; i < size - 1; i++) {
-                str = str + list[i] + ",";
-            }
-            str = str + "]";
-            return str;
+        } 
+
+        String str = "[";
+        for (int i = 0; i < size - 1; i++) {
+            str += list[i] + ",";
         }
+        str = str + "]";
+        return str;
+        
 
 
     }
