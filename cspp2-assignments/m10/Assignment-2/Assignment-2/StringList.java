@@ -1,5 +1,8 @@
 //An interface for ListADT of strings
 import java.util.Arrays;
+/**
+ * Interface for string list interface.
+ */
 interface StringListInterface {
     /**
      * { function_description }.
@@ -327,10 +330,11 @@ public class StringList implements StringListInterface {
             return "[]";
         } 
         String str = "[";
-        for (int i = 0; i < size; i++) {
+        int i = 0;
+        for (i = 0; i < size - 1; i++) {
             str += list[i] + ",";
         }
-        str = str + "]";
+        str = str + list[i] + "]";
         return str;
         
 
