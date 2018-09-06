@@ -118,8 +118,7 @@ public class List {
 		list[size++] = item;
 	}
 	public void resize() {
-    	int[] copy = Arrays.copyOf(list, 2*list.length);
-    	list = copy;
+    	list = Arrays.copyOf(list, 2*list.length);
 	}
 
 	/*
@@ -280,6 +279,9 @@ public class List {
 	 array to the end of list*/
 	public void addAll(final int items[]) {
 		// write the logic
+		if(items.length + size >= list.length) {
+			resize();
+		}
 		for (int i = 0; i < items.length; i++) {
 			list[size] = items[i];
 			size++;
