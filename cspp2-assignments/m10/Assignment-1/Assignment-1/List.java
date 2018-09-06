@@ -289,6 +289,7 @@ public class List {
          // write the logic 
     	if ( index < 0) {
     		System.out.println("Negative Index Exception");
+    	}
     	for (int i = size - 1; i < 10 ; i-- ) {
     		list[i + 1] = list[i];
     		if(index == i) {
@@ -296,7 +297,7 @@ public class List {
     			break;
     		
     		}
-    	}
+    	
     	}
     	size++;
     }
