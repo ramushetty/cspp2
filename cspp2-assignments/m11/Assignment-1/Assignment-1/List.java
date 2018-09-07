@@ -72,7 +72,7 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
-    private final static int NUM = 10;
+    private static final int NUM = 10;
  
     /**
      * Constructs the object.
@@ -305,17 +305,16 @@ public class List {
      */
     public void removeAll(final int[] newArray) {
         // write the logic
-        int osize = size;
-        // System.out.println(Arrays.toString(newArray));
         for (int i = 0; i < newArray.length; i++) {
-            // System.out.println(Arrays.toString(list)+"     "+newArray[i]);
+
             for (int j = 0; j < list.length; j++) {
-                // System.out.println(i + ", "+j);
+
                 if (list[j] == newArray[i]) {
 
-                    remove(j--);
+                    remove(j);
+                    j--;
                 }
-                // System.out.println(Arrays.toString(list));
+
 
             }
         }
@@ -464,7 +463,7 @@ public class List {
                     l.removeAll(a);
                 }
                 break;
-            case "subList": {
+            case "subList":
                 if (tokens.length != 2) {
                     break;
                 }
@@ -475,7 +474,6 @@ public class List {
                     System.out.println(object);
                 }
                 break;
-            }
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
