@@ -32,6 +32,11 @@ class Student {
   //Getter method which returns the value of instance variable
     return this.name;
   }
+  /**
+   * { hashcode}.
+   *
+   * @return     { description_of_the_return_value }
+   */
   public int hashcode() {
     return 0;
   }
