@@ -157,7 +157,7 @@ public class List<E> {
      */
     public boolean contains(E item) {
 		//Write logic for contains method
-        return true;
+        return indexOf(item) != -1;
 
     }
     /*
@@ -168,7 +168,11 @@ public class List<E> {
 
     public int indexOf(E item) {
        //Write logic for indexOf method
-
+        for (int i = 0; i < size() -1 ; i++) {
+            if(item == list[i]) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -194,15 +198,33 @@ public class List<E> {
      indicates the endIndex.
      */
     public List subList(int n, int n2) {
+        if (n == 0 && n2 == 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (n < 0 || n2 < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (n > size || n2 > size) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List nlist = new List();
+        for (int i = n; i < n2; i++) {
+            nlist.add(list[i]);
+        }
+        return nlist;
 
-        return null;
+
+
     }
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata)
     {
-        return listdata.toString().equals(list.toString());
+        return listdata.toString().equals(toString());
     }
     /*Removes all the elements from list*/
     public void clear()
