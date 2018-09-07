@@ -306,6 +306,7 @@ public class List {
     public void removeAll(final int[] newArray) {
         // write the logic
         int osize = size;
+        System.out.println(newArray.toString());
         for (int i = 0; i < newArray.length; i++) {
             System.out.println(this.toString());
             for (int j = 0; j < osize; j++) {
