@@ -343,8 +343,9 @@ public final class Solution {
         String[] arrstring3 = tokens[1].split(",");
         List object = l.subList(Integer.parseInt(
           arrstring3[0]), Integer.parseInt(arrstring3[1]));
-        if (object != null)
+        if (object != null) {
           System.out.println(object);
+        }
         break;
       case "equals":
         if (tokens.length == 2) {
@@ -425,9 +426,12 @@ public final class Solution {
         }
         break;
       case "subList":
-        if (tokens.length != 2) break;
+        if (tokens.length != 2) {
+          break;
+        }
         String[] arrstring3 = tokens[1].split(",");
-        List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+        List object = l.subList(Integer.parseInt(
+          arrstring3[0]), Integer.parseInt(arrstring3[1]));
         if (object != null) {
           System.out.println(object);
         }
@@ -547,7 +551,11 @@ public final class Solution {
       }
     }
   }
-
+  /**
+   * { main function }.
+   *
+   * @param      args  The arguments
+   */
   public static void main(final String[] args) {
     // create an object of the list to invoke methods on it
     Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -574,7 +582,8 @@ public final class Solution {
       executeListDouble(stdin);
       break;
 
-    case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+    case "O"://This case will be executed for Student
+    //type list i.e to store List of Student Objects
       executeListStudent(stdin);
       break;
     default:
