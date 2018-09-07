@@ -372,9 +372,9 @@ public class List {
      *
      * @return     { returns true or false }
      */
-    public boolean equals(final List list) {
+    public boolean equals(final List nlist) {
         // Replace the code below
-        return list.toString().equals(this.toString());
+        return nlist.toString().equals(this.toString());
     }
     /*
     * Removes all the elements from list
