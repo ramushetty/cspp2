@@ -258,7 +258,7 @@ public class List {
     		return null;
     	}
     	List nlist = new List();
-    	for (int i = start; i< end; i++) {
+    	for (int i = start; i < end; i++) {
     		nlist.add(list[i]);
     	}
 
@@ -270,7 +270,7 @@ public class List {
     */
     public boolean equals(List list ) {
     // Replace the code below
-    return list.equals(this.list);
+    return list.toString().equals(this.toString());
     }
     /*
     * Removes all the elements from list
