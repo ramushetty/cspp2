@@ -84,7 +84,7 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size == list.length) {
         	resize();
@@ -124,14 +124,14 @@ public class List {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index < 0 || index > size-1 ) {
         	System.out.println("Invalid Position Exception");
         } else {
 
-	        for (int i = index; i <= size() - 1; i++) {
+	        for (int i = index; i <= size(); i++) {
 	        	list[i] = list[i + 1];
 	        }
 	        size--;
@@ -149,7 +149,7 @@ public class List {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index <size) {
         	return list[index];
@@ -188,7 +188,7 @@ public class List {
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
 
         return indexOf(item) == -1;
@@ -197,7 +197,7 @@ public class List {
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size() - 1; i++) {
 	        if (list[i] == item) {
@@ -209,8 +209,7 @@ public class List {
     /*
     Inserts all the elements of specified int array to the end of list    
     */
-    public void addAll(int[] newArray)
-    {
+    public void addAll(int[] newArray) {
         // write the logic
         if ((size + newArray.length) > list.length) {
         	resize();
@@ -224,8 +223,7 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
-     public void removeAll(int[] newArray)
-     {
+     public void removeAll(int[] newArray) {
         // write the logic 
         for (int i = 0; i < newArray.length; i++) {
         	for (int j = 0; j < size - 1 ; j++) {
@@ -244,17 +242,32 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(int start, int end) 
-    {
+    public List subList(final int start, final int end) {
     // write the logic for subList
-    return new List();
+    	if (start < 0 || end < 0) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	}
+    	if (start > size || end > size) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	} 
+    	if (start > end) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	}
+    	List nlist = new List();
+    	for (int i = start; i< end; i++) {
+    		nlist.add(list[i]);
+    	}
+
+    return nlist;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list ) 
-    {
+    public boolean equals(List list ) {
     // Replace the code below
     return list.equals(this.list);
     }
@@ -263,8 +276,7 @@ public class List {
     * Think about this case and make the method
     * the simpler.
     */
-    public void clear()
-    {
+    public void clear() {
     // write the logic for clear.
     	removeAll(list);
 
