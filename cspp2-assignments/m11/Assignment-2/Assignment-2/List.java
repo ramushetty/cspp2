@@ -153,7 +153,7 @@ public class List<E> {
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
-     * the item exists and otherwise false
+     * the item exists and otherwise false`
      */
     public boolean contains(E item) {
 		//Write logic for contains method
@@ -224,7 +224,7 @@ public class List<E> {
      */
     public boolean equals(List<E> listdata)
     {
-        return listdata.toString().equals(toString());
+        return listdata.toString().equals(this.toString());
     }
     /*Removes all the elements from list*/
     public void clear()
