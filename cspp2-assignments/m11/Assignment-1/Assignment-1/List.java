@@ -30,7 +30,7 @@ public class List {
     */
 
     /**
-     * { var_description }.
+     * { list array of integer type }.
      */
     private int[] list;
     // declare a private int[]
