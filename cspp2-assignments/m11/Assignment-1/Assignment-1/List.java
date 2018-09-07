@@ -75,6 +75,7 @@ public class List {
         size = 0;
 
     }
+
     
     /*
      * The add method does what the name suggests. Add an int item to the list.
@@ -191,7 +192,7 @@ public class List {
     public boolean contains(final int item) {
         // Replace the code below
 
-        return indexOf(item) == -1;
+        return indexOf(item) != -1;
     }
     /*
      * Returns the index of the first occurrence of the specified element in
@@ -278,8 +279,8 @@ public class List {
     */
     public void clear() {
     // write the logic for clear.
-    	removeAll(list);
-
+    	//removeAll(list);
+    	size = 0;
     }
 
     public static void main(String[] args) {
