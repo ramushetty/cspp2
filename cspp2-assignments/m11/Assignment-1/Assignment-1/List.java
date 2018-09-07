@@ -309,7 +309,8 @@ public class List {
         System.out.println(Arrays.toString(newArray));
         for (int i = 0; i < newArray.length; i++) {
             System.out.println(this.toString()+"     "+newArray[i]);
-            for (int j = 0; j < osize; j++) {
+            for (int j = 0; j < size; j++) {
+                System.out.println(list[j]);
                 if (list[j] == newArray[i]) {
                     remove(j);
                 }
