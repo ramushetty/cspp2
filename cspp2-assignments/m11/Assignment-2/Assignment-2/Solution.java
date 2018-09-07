@@ -32,7 +32,9 @@ class Student {
   //Getter method which returns the value of instance variable
     return this.name;
   }
-
+  public int hashcode() {
+    return 0;
+  }
   @Override
 
   /**
