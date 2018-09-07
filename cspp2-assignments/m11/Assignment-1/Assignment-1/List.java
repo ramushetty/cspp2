@@ -306,15 +306,16 @@ public class List {
     public void removeAll(final int[] newArray) {
         // write the logic
         int osize = size;
-        System.out.println(Arrays.toString(newArray));
+        // System.out.println(Arrays.toString(newArray));
         for (int i = 0; i < newArray.length; i++) {
-            System.out.println(Arrays.toString(list)+"     "+newArray[i]);
+            // System.out.println(Arrays.toString(list)+"     "+newArray[i]);
             for (int j = 0; j < list.length; j++) {
-                System.out.println(i + ", "+j);
+                // System.out.println(i + ", "+j);
                 if (list[j] == newArray[i]) {
-                    remove(j);
+
+                    remove(j--);
                 }
-                System.out.println(Arrays.toString(list));
+                // System.out.println(Arrays.toString(list));
 
             }
         }

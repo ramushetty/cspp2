@@ -453,3 +453,54 @@ true
 9, 19
 [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 [8]
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+Index Out of Bounds Exception
+Index Out of Bounds Exception
+Index Out of Bounds Exception
+0
+[]
+[]
+0
+false
+[1,2,3,4]
+false
+
+Your Output: 
+Index Out of Bounds Exception
+Index Out of Bounds Exception
+Index Out of Bounds Exception
+0
+[]
+[]
+0
+false
+[1,2,3,4]
+false
+
+----------------------------------------
+Result: 2/3 testcases passed.
+Starting audit...
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:75:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:75:19: 'static' modifier out of order with the JLS suggestions. [ModifierOrder]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:76: Line has trailing spaces. [RegexpSingleline]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:311:53: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:311:54: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:311:61: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:311:62: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:313:44: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:313:45: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:372:38: 'list' hides a field. [HiddenField]
+[ERROR] H:\cspp2\cspp2-assignments\m11\Assignment-1\Assignment-1\List.java:466:29: Avoid nested blocks. [AvoidNestedBlocks]
+Audit done.
+Checkstyle ends with 12 errors.
+
+
+[master 789822c] "check_style_score -> 2 of 3 passed. style score: 0/1 "
+ 3 files changed, 459 insertions(+), 4 deletions(-)
+ rewrite cspp2-assignments/m11/Assignment-1/Assignment-1/List.class (82%)
+ create mode 100644 cspp2-assignments/m11/Assignment-1/Assignment-1/o.txt
+
