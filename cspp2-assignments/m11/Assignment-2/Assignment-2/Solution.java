@@ -106,7 +106,7 @@ public class Solution {
         if (tokens.length == 2) {
           String[] lt = tokens[1].split(",");
           List l2 = new List();
-          for (int k = 0; k < lt.length; k++ ) {
+          for (int k = 0; k < lt.length; k++) {
             l2.add(Integer.parseInt(lt[k]));
           }
           System.out.println(l.equals(l2));
@@ -186,9 +186,11 @@ public class Solution {
       case "subList": {
         if (tokens.length != 2) break;
         String[] arrstring3 = tokens[1].split(",");
-        List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
-        if (object != null)
+        List object = l.subList(Integer.parseInt(
+          arrstring3[0]), Integer.parseInt(arrstring3[1]));
+        if (object != null) {
           System.out.println(object);
+        }
         break;
       }
       case "equals":
@@ -266,15 +268,17 @@ public class Solution {
         if (tokens.length == 2) {
           String[] t2 = tokens[1].split(",");
           Float[] a = new Float[t2.length];
-          for (int i = 0; i < t2.length; i++)
+          for (int i = 0; i < t2.length; i++) {
             a[i] = Float.parseFloat(t2[i]);
+          }
           l.removeAll(a);
         }
         break;
       case "subList": {
         if (tokens.length != 2) break;
         String[] arrstring3 = tokens[1].split(",");
-        List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+        List object = l.subList(Integer.parseInt(
+          arrstring3[0]), Integer.parseInt(arrstring3[1]));
         if (object != null)
           System.out.println(object);
         break;
@@ -365,7 +369,7 @@ public class Solution {
         if (tokens.length == 2) {
           String[] lt = tokens[1].split(",");
           List l2 = new List();
-          for (int k = 0; k < lt.length; k++ ) {
+          for (int k = 0; k < lt.length; k++) {
             l2.add((lt[k]));
           }
           System.out.println(l.equals(l2));
