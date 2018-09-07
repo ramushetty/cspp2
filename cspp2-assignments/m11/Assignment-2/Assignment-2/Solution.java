@@ -9,17 +9,18 @@ import java.util.Scanner;
 class Student {
 
   /**
-   * { variable name of string type }
+   * { variable name of string type }.
    */
   private String name;
 
   /**
    * class constructor student.
    *
-   * @param      name  The name
+   * @param      nam  The name
    */
-  public Student(String name) {//A constructor used to initialize the instance variables
-    this.name = name;
+  Student(final String nam) { 
+  //A constructor used to initialize the instance variables
+    this.name = nam;
   }
 
   /**
@@ -27,7 +28,8 @@ class Student {
    *
    * @return     The name.
    */
-  public String getName() {//Getter method which returns the value of instance variable
+  public String getName() { 
+  //Getter method which returns the value of instance variable
     return this.name;
   }
 
@@ -40,7 +42,8 @@ class Student {
    *
    * @return     { return true or false }
    */
-  public boolean equals(Object other) { //This method is to check if two students names are equal or not
+  public boolean equals(final Object other) { 
+  //This method is to check if two students names are equal or not
     if (!(other instanceof Student)) {
       return false;
     }
@@ -64,7 +67,7 @@ class Student {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
   /**
    * empty constructor.
    */
@@ -139,8 +142,10 @@ public class Solution {
           l.removeAll(a);
         }
         break;
-      case "subList": {
-        if (tokens.length != 2) break;
+      case "subList":
+        if (tokens.length != 2) {
+          break;
+        }
         String[] arrstring3 = tokens[1].split(",");
         List object = l.subList(Integer.parseInt(
           arrstring3[0]), Integer.parseInt(arrstring3[1]));
@@ -148,7 +153,6 @@ public class Solution {
           System.out.println(object);
         }
         break;
-      }
       case "equals":
         if (tokens.length == 2) {
           String[] lt = tokens[1].split(",");
@@ -167,6 +171,11 @@ public class Solution {
       }
     }
   }
+  /**
+   * { function execute list double }.
+   *
+   * @param      stdin  The stdin
+   */
   public static void executeListDouble(final Scanner stdin) {
     List<Double> l = new List();
     while (stdin.hasNext()) {
@@ -230,8 +239,10 @@ public class Solution {
           l.removeAll(a);
         }
         break;
-      case "subList": {
-        if (tokens.length != 2) break;
+      case "subList":
+        if (tokens.length != 2) {
+          break;
+        }
         String[] arrstring3 = tokens[1].split(",");
         List object = l.subList(Integer.parseInt(
           arrstring3[0]), Integer.parseInt(arrstring3[1]));
@@ -239,7 +250,6 @@ public class Solution {
           System.out.println(object);
         }
         break;
-      }
       case "equals":
         if (tokens.length == 2) {
           String[] lt = tokens[1].split(",");
@@ -258,6 +268,11 @@ public class Solution {
       }
     }
   }
+  /**
+   * { function execute list float }.
+   *
+   * @param      stdin  The stdin
+   */
   public static void executeListFloat(final Scanner stdin) {
     List<Float> l = new List();
     while (stdin.hasNext()) {
@@ -321,20 +336,21 @@ public class Solution {
           l.removeAll(a);
         }
         break;
-      case "subList": {
-        if (tokens.length != 2) break;
+      case "subList":
+        if (tokens.length != 2) {
+          break;
+        }
         String[] arrstring3 = tokens[1].split(",");
         List object = l.subList(Integer.parseInt(
           arrstring3[0]), Integer.parseInt(arrstring3[1]));
         if (object != null)
           System.out.println(object);
         break;
-      }
       case "equals":
         if (tokens.length == 2) {
           String[] lt = tokens[1].split(",");
           List l2 = new List();
-          for (int k = 0; k < lt.length; k++ ) {
+          for (int k = 0; k < lt.length; k++) {
             l2.add(Float.parseFloat(lt[k]));
           }
           System.out.println(l.equals(l2));
