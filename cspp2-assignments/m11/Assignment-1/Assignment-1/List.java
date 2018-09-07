@@ -164,7 +164,7 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        if (index < 0 || index > size - 1 ) {
+        if (index < 0 || index > size - 1) {
             System.out.println("Invalid Position Exception");
         } else {
 
@@ -300,10 +300,10 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void removeAll(int[] newArray) {
+    public void removeAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < list.length ; j++) {
+            for (int j = 0; j < list.length; j++) {
                 if (list[j] == newArray[i]) {
                     remove(j);
                 }
@@ -361,7 +361,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(List list ) {
+    public boolean equals(final List list) {
         // Replace the code below
         return list.toString().equals(this.toString());
     }
@@ -449,25 +449,29 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     int[] a = new int[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
             case "subList": {
-                if (tokens.length != 2) break;
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
-                if (object != null)
+                if (object != null) {
                     System.out.println(object);
+                }
                 break;
             }
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
                     List l2 = new List();
-                    for (int k = 0; k < lt.length; k++ ) {
+                    for (int k = 0; k < lt.length; k++) {
                         l2.add(Integer.parseInt(lt[k]));
                     }
                     System.out.println(l.equals(l2));
