@@ -57,6 +57,8 @@ public class List {
      *
      */
 
+
+
     /**
      * { var_description }.
      */
@@ -70,7 +72,8 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
-
+    private final static int NUM = 10;
+ 
     /**
      * Constructs the object.
      */
@@ -85,7 +88,7 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        list = new int[10];
+        list = new int[NUM];
         size = 0;
 
     }
@@ -280,7 +283,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         // write the logic
         if ((size + newArray.length) > list.length) {
             resize();
@@ -303,10 +306,12 @@ public class List {
     public void removeAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
+            System.out.println(newArray.toString());
             for (int j = 0; j < list.length; j++) {
                 if (list[j] == newArray[i]) {
                     remove(j);
                 }
+                System.out.println(list.toString());
 
             }
         }
