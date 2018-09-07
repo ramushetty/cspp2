@@ -60,7 +60,7 @@ public class List {
 
 
     /**
-     * { var_description }.
+     * { variable size of integer type}.
      */
     private int size;
 
@@ -71,6 +71,10 @@ public class List {
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
+     */
+
+    /**
+     * { variable num }.
      */
     private static final int NUM = 10;
  
