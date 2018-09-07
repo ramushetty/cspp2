@@ -77,9 +77,8 @@ public class List {
      * { variable num }.
      */
     private static final int NUM = 10;
- 
     /**
-     * Constructs the object.
+     * list Constructer.
      */
     public List() {
 
@@ -108,7 +107,7 @@ public class List {
      */
 
     /**
-     * { function_description }.
+     * { add() adds items to list }.
      *
      * @param      item  The item
      */
@@ -121,7 +120,7 @@ public class List {
     }
 
     /**
-     * { function_description }.
+     * { resize() doubles the present size of list}.
      */
     public void resize() {
         list = Arrays.copyOf(list, 2 * list.length);
@@ -136,9 +135,9 @@ public class List {
      */
 
     /**
-     * { function_description }.
+     * { size() returns size of list }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns number of items }
      */
     public int size() {
         // replace the code below to implement the size method
@@ -164,7 +163,7 @@ public class List {
      */
 
     /**
-     * { function_description }.
+     * { removes the number present at particular index }.
      *
      * @param      index  The index
      */
@@ -195,11 +194,11 @@ public class List {
      */
 
     /**
-     * { function_description }.
+     * { returns number present at index in list }.
      *
      * @param      index  The index
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns number or -1 if number not present in list }
      */
     public int get(final int index) {
         // Replace the code below to write the code for get
@@ -247,11 +246,11 @@ public class List {
      * exists and otherwise false
      */
     /**
-     * { function_description }.
+     * { checks number is present in list or not }.
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     { retuns true or false}
      */
     public boolean contains(final int item) {
         // Replace the code below
@@ -268,7 +267,7 @@ public class List {
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns index value}
      */
     public int indexOf(final int item) {
         // Replace the code below
@@ -333,12 +332,12 @@ public class List {
     */
 
     /**
-     * { function_description }.
+     * { returns sublist from start to end }.
      *
      * @param      start  The start
      * @param      end    The end
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns sublist }
      */
     public List subList(final int start, final int end) {
         // write the logic for subList
@@ -367,11 +366,11 @@ public class List {
     */
 
     /**
-     * { function_description }.
+     * { checks for numbers in list }.
      *
      * @param      list  The list
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns true or false }
      */
     public boolean equals(final List list) {
         // Replace the code below
@@ -384,7 +383,7 @@ public class List {
     */
 
     /**
-     * { function_description }.
+     * { clears the list }.
      */
     public void clear() {
         // write the logic for clear.
@@ -392,7 +391,7 @@ public class List {
         size = 0;
     }
     /**
-     * { function_description }.
+     * { main function }.
      *
      * @param      args  The arguments
      */
