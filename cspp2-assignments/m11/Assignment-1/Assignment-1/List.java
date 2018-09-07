@@ -228,7 +228,7 @@ public class List {
         // write the logic 
         for (int i = 0; i < newArray.length; i++) {
         	for (int j = 0; j < size() - 1 ; j++) {
-        		if (list[j] == list[i]) {
+        		if (list[j] == newArray[i]) {
         			remove(j);
         		}
         		
