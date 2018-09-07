@@ -168,7 +168,7 @@ public class List<E> {
 
     public int indexOf(E item) {
        //Write logic for indexOf method
-        for (int i = 0; i < size() -1 ; i++) {
+        for (int i = 0; i < size()-1; i++) {
             if(item == list[i]) {
                 return i;
             }
