@@ -35,12 +35,11 @@ class Student {
   /**
    * { hashcode}.
    *
-   * @return     { description_of_the_return_value }
+   * @return     { returns 0 }
    */
-  public int hashcode() {
+  public int hashCode() {
     return 0;
   }
-  
   @Override
 
   /**
