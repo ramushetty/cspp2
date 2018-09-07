@@ -308,13 +308,13 @@ public class List {
         int osize = size;
         System.out.println(Arrays.toString(newArray));
         for (int i = 0; i < newArray.length; i++) {
-            System.out.println(this.toString()+"     "+newArray[i]);
-            for (int j = 0; j < size; j++) {
-                System.out.println(list[j]);
+            System.out.println(Arrays.toString(list)+"     "+newArray[i]);
+            for (int j = 0; j < list.length; j++) {
+                System.out.println(i + ", "+j);
                 if (list[j] == newArray[i]) {
                     remove(j);
                 }
-                System.out.println(this.toString());
+                System.out.println(Arrays.toString(list));
 
             }
         }
