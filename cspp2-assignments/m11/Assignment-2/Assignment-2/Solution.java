@@ -40,7 +40,8 @@ class Student {
   public int hashcode() {
     return 0;
   }
-
+  
+  @Override
 
   /**
    * { checks for equals numbers }
