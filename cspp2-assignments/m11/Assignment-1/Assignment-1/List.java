@@ -368,7 +368,7 @@ public class List {
     /**
      * { checks for numbers in list }.
      *
-     * @param      list  The list
+     * @param      nlist  The list
      *
      * @return     { returns true or false }
      */
