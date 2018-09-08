@@ -93,8 +93,8 @@ class Set {
     	int[][] narr = new int[size * arr.size()][2];
     	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < narr.length; j++) {
-    			narr[i][0] = set[i];
-    			narr[i][1] = arr.get(i);
+    			narr[i][j] = set[i];
+    			narr[j][i] = arr.get(i);
     		}
     	}
     	return narr; 
