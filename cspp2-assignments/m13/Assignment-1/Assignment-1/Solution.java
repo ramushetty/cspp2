@@ -91,7 +91,7 @@ class Set {
     }
     public int[][] cartesianProduct(Set arr) {
     	int[][] narr = new int[size * arr.size()][2];
-    	System.out.println(arr.set);
+    	System.out.println(arr.toString());
     	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < narr.length; j++) {
     			narr[i][j] = arr.get(i);
