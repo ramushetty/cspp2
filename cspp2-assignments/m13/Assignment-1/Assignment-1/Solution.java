@@ -9,8 +9,6 @@ import java.util.Arrays;
 class Set {
 	//your code goes here...
 	//Good luck :-)
-	//
-	
 
 	/**
 	 * { set of array of integer type }.
@@ -21,12 +19,16 @@ class Set {
 	 * { variable size }.
 	 */
 	private int size;
+	/**
+	 * { number  }.
+	 */
+	private static final int NUM = 10;
 
 	/**
 	 * set constructor.
 	 */
-	public Set() {
-		set = new int[10];
+	 Set() {
+		set = new int[NUM];
 		size = 0;
 	}
 
@@ -142,10 +144,10 @@ class Set {
 	 *
 	 * @return     { returns set }
 	 */
-	public Set intersection(Set item) {
+	public Set intersection(final Set item) {
 		Set nset = new Set();
 		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < item.size(); j++ ) {
+			for (int j = 0; j < item.size(); j++) {
 				if (set[i] == item.set[j]) {
 					nset.add(set[i]);
 				}
@@ -173,7 +175,7 @@ class Set {
 	 *
 	 * @return     { returns an 2d array}
 	 */
-	public int[][] cartesianProduct(Set arr) {
+	public int[][] cartesianProduct(final Set arr) {
 		int[][] narr = new int[size * arr.size()][2];
 		System.out.println(arr.toString());
 		System.out.println(toString());
@@ -246,7 +248,8 @@ public final class Solution {
 				System.out.println(s.size());
 				break;
 			case "contains":
-				System.out.println(s.contains(Integer.parseInt(tokens[1])));
+				System.out.println(s.contains(
+					Integer.parseInt(tokens[1])));
 				break;
 			case "print":
 				System.out.println(s);
@@ -282,7 +285,8 @@ public final class Solution {
 				s.add(intArray);
 				intArray = intArray(tokens[2]);
 				t.add(intArray);
-				System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+				System.out.println(Arrays.deepToString(
+					s.cartesianProduct(t)));
 				break;
 			default:
 				break;
