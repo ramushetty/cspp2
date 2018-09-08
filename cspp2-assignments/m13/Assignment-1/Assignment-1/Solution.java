@@ -19,10 +19,10 @@ class Set {
     	return size;
     }
     public boolean contains(final int item) {
-    	return indexof(item) == -1;
+    	return indexof(item) != -1;
     }
     public int indexof(final int item) {
-    	for (int i = 0; i< size; i++) {
+    	for (int i = 0; i< size(); i++) {
     		if (item == set[i]) {
     			return i;
     		}
@@ -36,8 +36,8 @@ class Set {
     	String str;
     	str = "{";
     	int i = 0;
-    	for (i = 0; i < size; i++) {
-    		str += set[i] + ",";
+    	for (i = 0; i < size() - 1; i++) {
+    		str += set[i] + "," + " ";
     	}
     	str += set[i] + "}";
     	return str;
@@ -46,47 +46,32 @@ class Set {
     	if (size == set.length) {
     		resize();
     	}
-    	for (int i = 0; i < size; i++) {
-    		if (item == set[i]) {
-    			break;
-    		}
     		set[size++] = item;
-    	}
-
     }
     public void add(final int[] items) {
-    	if (items.length + size >= set.length) {
+    	if (items.length + size > set.length) {
     		resize();
     	}
+
     	for (int i = 0; i < items.length; i++) {
-    		add(items[i]);
+    		if (indexof(items[i]) == -1) {
+    			add(items[i]);
+    		}
+
+    		
     	}
     }
      public Set retainAll(final int[] arr) {
-    	int i = 0;
-    	int count = 0;
-    	Set nset = new Set();
-    	while(i < size) {
-    		count = 0;
+    	Set rset = new Set();
+    	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < arr.length; j++) {
-    			if (set[i] == set[j]) {
-    				count++;
+    			if (set[i] == arr[j]) {
+    				rset.add(set[i]);
     			}
     		}
-    		if (count == 0) {
-    			remove(i);
-    		} else {
-    			i++;
-    		}
-    		
-
-    		for (int k = 0 ; k < size; k++) {
-    			nset.add(set[k]);
-    		}
-
-
     	}
-    	return nset;
+    	return rset;
+ 
     	
     }
     public Set intersection(Set item) {
@@ -94,7 +79,7 @@ class Set {
     	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < item.size(); j++ ) {
     			if (set[i] == item.set[j]) {
-    				nset.add(set[j]);
+    				nset.add(set[i]);
     			}
     			
     		}
