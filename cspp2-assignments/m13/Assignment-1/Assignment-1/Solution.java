@@ -95,8 +95,8 @@ class Set {
     	System.out.println(toString());
     	for (int i = 0; i < size(); i++) {
     		for (int j = 0; j < narr.length; j++) {
-    			narr[i][0] = get(i);
-    			narr[0][j] = arr.get(j);
+    			narr[1][0] = set[i];
+    			narr[0][1] = arr.get(j);
     		}
     	}
     	return narr; 
