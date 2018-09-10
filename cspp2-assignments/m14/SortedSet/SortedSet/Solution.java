@@ -135,7 +135,7 @@ class SortedSetADT {
     }
 
     /**
-     * { function_description }.
+     * { add elements to set }.
      *
      * @param      item  The item
      */
@@ -147,7 +147,7 @@ class SortedSetADT {
     }
 
     /**
-     * { function_description }.
+     * { increases the size of set}.
      */
     public void resize() {
         set = Arrays.copyOf(set, 2 * set.length);
