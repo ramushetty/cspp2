@@ -41,7 +41,7 @@ class SortedSetADT {
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
-            
+
         }
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
@@ -50,7 +50,7 @@ class SortedSetADT {
         }
         return sset;
     }
-    
+
 
     /**
      * { returns elements up to toelements}.
@@ -63,8 +63,8 @@ class SortedSetADT {
         SortedSetADT nset = new SortedSetADT();
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
-            nset.add(set[i]);
-        }
+                nset.add(set[i]);
+            }
         }
         return nset;
     }
@@ -94,7 +94,7 @@ class SortedSetADT {
         for (int i = 0; i < array.length; i++) {
             if (contains(array[i]) == 0) {
                 add(array[i]);
-            }  
+            }
         }
         set = Arrays.copyOf(set, size);
         Arrays.sort(set);
@@ -177,38 +177,38 @@ public final class Solution {
             String line = inp.nextLine();
             String[] tokens = line.split(" ");
             switch (tokens[0]) {
-                case "subSet":
-                    if (tokens.length == 2) {
-                        String[] t = tokens[1].split(",");
-                        if (s.subSet(Integer.parseInt(
-                            t[0]), Integer.parseInt(t[1])) != null) {
-                            System.out.println(s.subSet(
-                                Integer.parseInt(t[0]), Integer.parseInt(t[1])));
-                        }
+            case "subSet":
+                if (tokens.length == 2) {
+                    String[] t = tokens[1].split(",");
+                    if (s.subSet(Integer.parseInt(
+                                     t[0]), Integer.parseInt(t[1])) != null) {
+                        System.out.println(s.subSet(
+                                               Integer.parseInt(t[0]), Integer.parseInt(t[1])));
                     }
-                    break;
+                }
+                break;
 
-                case "headSet":
-                    System.out.println(s.headSet(Integer.parseInt(tokens[1])));
-                    break;
-                case "last":
-                    System.out.println(s.last());
-                    break;
-                case "addAll":
-                    if (tokens.length == 2) {
-                        String[] t = tokens[1].split(",");
-                        int[] temp = new int[t.length];
-                        for (int i = 0; i < temp.length; i++) {
-                            temp[i] = Integer.parseInt(t[i]);
-                        }
-                        s.addAll(temp);
+            case "headSet":
+                System.out.println(s.headSet(Integer.parseInt(tokens[1])));
+                break;
+            case "last":
+                System.out.println(s.last());
+                break;
+            case "addAll":
+                if (tokens.length == 2) {
+                    String[] t = tokens[1].split(",");
+                    int[] temp = new int[t.length];
+                    for (int i = 0; i < temp.length; i++) {
+                        temp[i] = Integer.parseInt(t[i]);
                     }
-                    break;
-                case "print":
-                    System.out.println(s);
-                    break;
-                default:
-                    break;
+                    s.addAll(temp);
+                }
+                break;
+            case "print":
+                System.out.println(s);
+                break;
+            default:
+                break;
 
             }
         }
