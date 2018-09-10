@@ -56,8 +56,10 @@ class SortedSetADT {
      */
     public SortedSetADT headSet(final int toElement) {
         SortedSetADT nset = new SortedSetADT();
-        for (int i = 0; i < index(toElement); i++) {
+        for (int i = 0; i < size; i++) {
+            if(set[i] < toElement) {
             nset.add(set[i]);
+        }
         }
         return nset;
     }
