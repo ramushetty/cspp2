@@ -38,8 +38,10 @@ class SortedSetADT {
      */
     public SortedSetADT subSet(final int fromElement, final int toElement) {
         SortedSetADT sset = new SortedSetADT();
-        for (int i = index(fromElement); i < index(toElement); i++) {
-            sset.add(set[i]);
+        for (int i = 0; i < size; i++) {
+            if (set[i] >= fromElement && set[i] < toElement) {
+                sset.add(set[i]);
+            }
         }
         return sset;
     }
