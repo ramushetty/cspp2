@@ -38,6 +38,11 @@ class SortedSetADT {
      */
     public SortedSetADT subSet(final int fromElement, final int toElement) {
         SortedSetADT sset = new SortedSetADT();
+        if (fromElement > toElement) {
+            System.out.println("Invalid Arguments to Subset Exception");
+            return null;
+            
+        }
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 sset.add(set[i]);
@@ -194,7 +199,9 @@ public class Solution {
                 case "subSet":
                     if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
-                        System.out.println(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])));
+                        if(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])) != null) {
+                            System.out.println(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])));
+                        }
                     }
                     break;
 
