@@ -32,11 +32,11 @@ class SortedSetADT {
 	 * @return     { description_of_the_return_value }
 	 */
 	public SortedSetADT subSet(final int fromElement, final int toElement) {
-		SortedSetADT nset = new SortedSetADT();
+		SortedSetADT sset = new SortedSetADT();
 		for (int i = index(fromElement); i < index(toElement); i++) {
-			nset.add(set[i]);
+			sset.add(set[i]);
 		}
-		return nset;
+		return sset;
 	}
 	
 
@@ -182,12 +182,12 @@ public class Solution {
 			String line = inp.nextLine();
 			String[] tokens = line.split(" ");
 			switch (tokens[0]) {
-				// case "subSet":
-				// 	if (tokens.length == 2) {
-				// 		String[] t = tokens[1].split(",");
-				// 		s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
-				// 	}
-				// 	break;
+				case "subSet":
+					if (tokens.length == 2) {
+						String[] t = tokens[1].split(",");
+						System.out.println(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])));
+					}
+					break;
 
 				case "headSet":
 					System.out.println(s.headSet(Integer.parseInt(tokens[1])));
