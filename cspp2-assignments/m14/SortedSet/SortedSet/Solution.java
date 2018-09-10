@@ -96,6 +96,10 @@ class SortedSetADT {
      * @return     { returns last element }
      */
     public int last() {
+        if (size == 0) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        }
         return set[size - 1];
 
     }
