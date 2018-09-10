@@ -114,6 +114,9 @@ class SortedSetADT {
 	 * @return     { description_of_the_return_value }
 	 */
 	public String toString() {
+		if (size == 0) {
+			return "{}";
+		}
 		int i = 0;
 		String str = "{";
 		for (i = 0; i < size - 1; i++) {
