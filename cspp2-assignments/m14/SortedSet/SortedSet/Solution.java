@@ -68,28 +68,6 @@ class SortedSetADT {
         }
         return nset;
     }
-
-    /**
-     * { returns the index of element}.
-     *
-     * @param      item  The item
-     *
-     * @return     { returns index from set }
-     */
-    public int index(final int item) {
-        for (int i = 0; i < size - 1; i++) {
-            if (item == set[i]) {
-                return i;
-            } else {
-
-                if (item > set[size - 1]) {
-                    return size - 1;
-                }
-            }
-        }
-        return 0;
-    }
-
     /**
      * { returns last element in set }.
      *
@@ -230,9 +208,10 @@ public class Solution {
                 case "print":
                     System.out.println(s);
                     break;
+                default:
+                    break;
 
             }
         }
-
     }
 }
