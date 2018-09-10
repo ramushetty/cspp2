@@ -62,7 +62,7 @@ class SortedSetADT {
     public SortedSetADT headSet(final int toElement) {
         SortedSetADT nset = new SortedSetADT();
         for (int i = 0; i < size; i++) {
-            if(set[i] < toElement) {
+            if (set[i] < toElement) {
             nset.add(set[i]);
         }
         }
@@ -91,11 +91,10 @@ class SortedSetADT {
         if (size + array.length > set.length) {
             resize();
         }
-        for ( int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (contains(array[i]) == 0) {
                 add(array[i]);
-            }
-            
+            }  
         }
         set = Arrays.copyOf(set, size);
         Arrays.sort(set);
@@ -126,7 +125,7 @@ class SortedSetADT {
      *
      * @return     { returns -1 or 0 }
      */
-    public int contains(int item) {
+    public int contains(final int item) {
         for (int i = 0; i < size; i++) {
             if (item == set[i]) {
                 return -1;
@@ -151,7 +150,7 @@ class SortedSetADT {
      * { function_description }.
      */
     public void resize() {
-        set = Arrays.copyOf(set, 2*set.length);
+        set = Arrays.copyOf(set, 2 * set.length);
     }
 
 }
@@ -159,7 +158,7 @@ class SortedSetADT {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -181,16 +180,16 @@ public class Solution {
                 case "subSet":
                     if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
-                        if(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])) != null) {
-                            System.out.println(s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])));
+                        if (s.subSet(Integer.parseInt(
+                            t[0]), Integer.parseInt(t[1])) != null) {
+                            System.out.println(s.subSet(
+                                Integer.parseInt(t[0]), Integer.parseInt(t[1])));
                         }
                     }
                     break;
 
                 case "headSet":
                     System.out.println(s.headSet(Integer.parseInt(tokens[1])));
-                    
-
                     break;
                 case "last":
                     System.out.println(s.last());
