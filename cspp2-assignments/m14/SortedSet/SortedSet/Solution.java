@@ -183,7 +183,8 @@ public final class Solution {
                     if (s.subSet(Integer.parseInt(
                                      t[0]), Integer.parseInt(t[1])) != null) {
                         System.out.println(s.subSet(
-                                               Integer.parseInt(t[0]), Integer.parseInt(t[1])));
+                                               Integer.parseInt(
+                                                t[0]), Integer.parseInt(t[1])));
                     }
                 }
                 break;
