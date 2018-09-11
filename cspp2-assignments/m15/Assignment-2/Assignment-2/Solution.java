@@ -2,11 +2,11 @@ import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.util.Arrays;
 /**
- * Exception for signaling set empty errors.
+ * Exception for empty set.
  */
 class SetEmptyException extends Exception {
   /**
-   * Constructs the object.
+   * setemptyexception Constructor.
    *
    * @param      msg   The message
    */
@@ -15,7 +15,7 @@ class SetEmptyException extends Exception {
   }
 }
 /**
- * Exception for signaling invalid subset selection errors.
+ * Exception for invalid set selection exception.
  */
 class InvalidSubsetSelectionException extends Exception {
   /**
@@ -33,26 +33,26 @@ class InvalidSubsetSelectionException extends Exception {
  */
 class SortedSetADT {
   /**
-   * { var_description }.
+   * { integer array set }.
    */
   private int[] set;
   /**
-   * { var_description }.
+   * { integer variable size}.
    */
   private int size;
   /**
-   * { var_description }.
+   * { number }.
    */
   private static final int NUM = 10;
   /**
-   * Constructs the object.
+   * Constructor sortedsetadt.
    */
   SortedSetADT() {
     set = new int[NUM];
     size = 0;
   }
   /**
-   * { function_description }.
+   * { adds items to set }.
    *
    * @param      item  The item
    */
@@ -63,7 +63,7 @@ class SortedSetADT {
     set[size++] = item;
   }
   /**
-   * { function_description }.
+   * { doubles the size of set}.
    */
   public void resize() {
     set = Arrays.copyOf(set, 2 * set.length);
@@ -87,11 +87,11 @@ class SortedSetADT {
 
   }
   /**
-   * { function_description }.
+   * { checks for elements present in set or not }.
    *
    * @param      item  The item
    *
-   * @return     { description_of_the_return_value }
+   * @return     { returns -1 or 0 }
    */
   public int contains(final int item) {
     for (int i = 0; i < size; i++) {
@@ -120,13 +120,13 @@ class SortedSetADT {
     return str;
   }
   /**
-   * { function_description }.
+   * { returns elements upto given item}.
    *
    * @param      end                The end
    *
-   * @return     { description_of_the_return_value }
+   * @return     { returns set }
    *
-   * @throws     SetEmptyException  { exception_description }
+   * @throws     SetEmptyException  { exception }
    */
   public SortedSetADT headSet(final int end) throws SetEmptyException {
     SortedSetADT sset = new SortedSetADT();
@@ -144,11 +144,11 @@ class SortedSetADT {
 
   }
   /**
-   * { function_description }.
+   * { returns last element in set}.
    *
-   * @return     { description_of_the_return_value }
+   * @return     { returns last element }
    *
-   * @throws     SetEmptyException  { exception_description }
+   * @throws     SetEmptyException  { exception }
    */
   public int last() throws SetEmptyException {
     if (size == 0) {
@@ -157,14 +157,14 @@ class SortedSetADT {
     return set[size - 1];
   }
   /**
-   * { function_description }.
+   * { returns subset of main set }.
    *
    * @param      fromelement                      The fromelement
    * @param      endelement                       The endelement
    *
-   * @return     { description_of_the_return_value }
+   * @return     { returns subset }
    *
-   * @throws     InvalidSubsetSelectionException  { exception_description }
+   * @throws     InvalidSubsetSelectionException  { exception }
    */
   public SortedSetADT subSet(final int fromelement, final int endelement)
   throws InvalidSubsetSelectionException {
@@ -228,11 +228,11 @@ class SortedSetADT {
 
 
 /**
- * { item_description }.
+ * { main class }.
  */
 public final class Solution {
   /**
-   * Constructs the object.
+   * Constructor solution.
    */
   private Solution() {
     //empty.
@@ -259,7 +259,7 @@ public final class Solution {
 
   }
   /**
-   * { function_description }.
+   * { main function }.
    *
    * @param      args  The arguments
    */
