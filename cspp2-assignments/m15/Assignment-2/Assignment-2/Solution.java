@@ -128,17 +128,17 @@ class SortedSetADT {
 	public SortedSetADT headSet(final int end) throws SetEmptyException {
 		SortedSetADT sset = new SortedSetADT();
 		int count = 0;
-		for (int i = 0; i < set[end]; i++) {
+		for (int i = 0; i < size; i++) {
 			if (set[i] < end) {
 				sset.add(set[i]);
 				count++;
-			} 
+			}
 		}
 		if (count  != 0) {
 			return sset;
 		}
 		throw new SetEmptyException("Set Empty Exception");
-		
+
 	}
 	/**
 	 * { function_description }.
@@ -148,25 +148,21 @@ class SortedSetADT {
 	 * @throws     SetEmptyException  { exception_description }
 	 */
 	public int last() throws SetEmptyException {
-		if(size == 0) {
+		if (size == 0) {
 			throw new SetEmptyException("Set Empty Exception");
 		}
 		return set[size - 1];
 	}
 	public SortedSetADT subSet(final int fromelement, int endelement) throws InvalidSubsetSelectionException {
-		// System.out.println(fromelement +","+ endelement);
 		if (fromelement > endelement) {
 			throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
 		}
-		System.out.println("heyy");
 		SortedSetADT nset = new SortedSetADT();
-		// System.out.println(100/0);
 		for (int i = 0; i < size; i++) {
 			if (set[i] >= fromelement && set[i] < endelement) {
 				nset.add(set[i]);
 			}
 		}
-		// System.out.println(nset);
 		return nset;
 	}
 }
@@ -192,53 +188,53 @@ public final class Solution {
 			String line = stdin.nextLine();
 			String[] tokens = line.split(" ");
 			switch (tokens[0]) {
-				case "add":
-					if (tokens.length == 2) {
-						s.add(Integer.parseInt(tokens[1]));
+			case "add":
+				if (tokens.length == 2) {
+					s.add(Integer.parseInt(tokens[1]));
+				}
+				break;
+			case "addAll":
+				if (tokens.length == 2) {
+					String[] t = tokens[1].split(",");
+					int[] a = new int[t.length];
+					for (int i = 0; i < a.length; i++) {
+						a[i] = Integer.parseInt(t[i]);
 					}
-					break;
-				case "addAll":
-					if (tokens.length == 2) {
-						String[] t = tokens[1].split(",");
-						int[] a = new int[t.length];
-						for (int i = 0; i < a.length; i++) {
-							a[i] = Integer.parseInt(t[i]);
-						}
-						s.addAll(a);
-					}
-					break;
-				case "print":
-					System.out.println(s);
-					break;
-				case "headSet":
+					s.addAll(a);
+				}
+				break;
+			case "print":
+				System.out.println(s);
+				break;
+			case "headSet":
+				try {
+					System.out.println(s.headSet(Integer.parseInt(tokens[1])));
+				} catch (Exception ex) {
+					System.out.println("Set Empty Exception");
+				}
+				break;
+			case "last":
+				try {
+					System.out.println(s.last());
+				} catch (Exception ex) {
+					System.out.println("Set Empty Exception");
+				}
+				break;
+			case "subSet":
+				if (tokens.length == 2) {
+					String[] t2 = tokens[1].split(",");
 					try {
-						System.out.println(s.headSet(Integer.parseInt(tokens[1])));
-					} catch(Exception ex) {
-						System.out.println("Set Empty Exception");
-					}
-					break;
-				case "last":
-					try {
-						System.out.println(s.last());
+
+						s.subSet(Integer.parseInt(t2[0]), Integer.parseInt(t2[1]));
+						System.out.println(s.subSet(
+						                       Integer.parseInt(
+						                           t2[0]), Integer.parseInt(t2[1])));
+
 					} catch (Exception ex) {
-						System.out.println("Set Empty Exception");
+						System.out.println("Invalid Arguments to Subset Exception");
 					}
-					break;
-				case "subSet":
-					if (tokens.length == 2) {
-						String[] t2 = tokens[1].split(",");
-						try {
-						
-							s.subSet(Integer.parseInt(t2[0]), Integer.parseInt(t2[1])); 
-							System.out.println(s.subSet(
-		                                               Integer.parseInt(
-		                                                t2[0]), Integer.parseInt(t2[1])));
-		                    
-						} catch (Exception ex) {
-							System.out.println("Invalid Arguments to subset Exception");
-						}
-					}
-					break;
+				}
+				break;
 
 			}
 		}
