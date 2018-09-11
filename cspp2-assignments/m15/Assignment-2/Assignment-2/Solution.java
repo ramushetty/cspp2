@@ -166,7 +166,7 @@ class SortedSetADT {
    *
    * @throws     InvalidSubsetSelectionException  { exception_description }
    */
-  public SortedSetADT subSet(final int fromelement, int endelement)
+  public SortedSetADT subSet(final int fromelement, final int endelement)
   throws InvalidSubsetSelectionException {
     if (fromelement > endelement) {
       throw new InvalidSubsetSelectionException(
@@ -263,7 +263,7 @@ public final class Solution {
    *
    * @param      args  The arguments
    */
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     SortedSetADT s = new SortedSetADT();
     Scanner stdin = new Scanner(new BufferedInputStream(System.in));
     while (stdin.hasNext()) {
