@@ -138,6 +138,15 @@ class List {
         }
         return -1;
     }
+    public int count(final int item) {
+    	int count = 0;
+    	for (int i = 0; i < size; i++) {
+    		if (item == list[i]) {
+    			count++;
+    		}
+    	}
+    	return count;
+    }
 	
 
 }
@@ -234,6 +243,9 @@ public final class Solution {
 	            case "size":
 	                System.out.println(s.size());
 	                break;
+	            case "count":
+	            	System.out.println(s.count(Integer.parseInt(tokens[1])));
+	            	break;
 	            default:
 	            	break;
 			}
