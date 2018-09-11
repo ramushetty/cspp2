@@ -11,7 +11,7 @@ class InvalidPositionException extends Exception {
    *
    * @param      msg   The message
    */
-  public InvalidPositionException(String msg) {
+    InvalidPositionException(final String msg) {
     super(msg);
   }
 }
@@ -33,7 +33,7 @@ class List {
   private static final int NUM = 10;
 
   /**
-   * list Constructor
+   * list Constructor.
    */
   List() {
     list = new int[NUM];
@@ -103,7 +103,7 @@ class List {
   /**
    * Removes all.
    *
-   * @param      newArray  The new array
+   * @param      newarray  The new array
    */
   public void removeAll(final int[] newarray) {
     for (int i = 0; i < newarray.length; i++) {
@@ -147,7 +147,8 @@ class List {
    *
    * @throws     IndexOutOfBoundsException  { exception }
    */
-  public List subList(final int starting, final int ending) throws IndexOutOfBoundsException {
+  public List subList(final int starting, final int ending) 
+  throws IndexOutOfBoundsException {
     if (starting > size || ending > size) {
       throw new IndexOutOfBoundsException("Index Out of Bounds Exception");
     }
@@ -225,6 +226,14 @@ class List {
     }
     return -1;
   }
+
+  /**
+   * { counts the number of duplicate elements in list}.
+   *
+   * @param      item  The item
+   *
+   * @return     { returns the number of counted element }
+   */
   public int count(final int item) {
     int count = 0;
     for (int i = 0; i < size; i++) {
@@ -288,7 +297,8 @@ public final class Solution {
       case "subList":
         String[] t1 = tokens[1].split(",");
         try {
-          List object = s.subList(Integer.parseInt(t1[0]), Integer.parseInt(t1[1]));
+          List object = s.subList(Integer.parseInt(
+            t1[0]), Integer.parseInt(t1[1]));
           System.out.println(object);
         } catch (Exception ex) {
           System.out.println("Index Out of Bounds Exception");
