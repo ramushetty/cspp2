@@ -158,12 +158,14 @@ class SortedSetADT {
 		if (fromelement > endelement) {
 			throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
 		}
+		System.out.println("heyy");
 		SortedSetADT nset = new SortedSetADT();
 		for (int i = fromelement; i < endelement; i++) {
 			if (set[i] >= fromelement && set[i] < endelement) {
 				nset.add(set[i]);
 			}
 		}
+		System.out.println(nset);
 		return nset;
 	}
 }
