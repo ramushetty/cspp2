@@ -298,7 +298,8 @@ public final class Solution {
 						                       t2[0]), Integer.parseInt(t2[1])));
 
 					} catch (Exception ex) {
-						System.out.println("Invalid Arguments to Subset Exception");
+						System.out.println(
+						  "Invalid Arguments to Subset Exception");
 					}
 				}
 				break;
