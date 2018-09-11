@@ -154,6 +154,7 @@ class SortedSetADT {
 		return set[size - 1];
 	}
 	public SortedSetADT subSet(final int fromelement, int endelement) throws InvalidSubsetSelectionException {
+		System.out.println(fromelement +","+ endelement);
 		if (fromelement > endelement) {
 			throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
 		}
@@ -222,13 +223,13 @@ public final class Solution {
 					break;
 				case "subSet":
 					if (tokens.length == 2) {
-						String[] t = tokens[1].split(",");
+						String[] t2 = tokens[1].split(",");
 						try {
 						
-							s.subSet(Integer.parseInt(t[0]), Integer.parseInt(t[1])); 
+							s.subSet(Integer.parseInt(t2[0]), Integer.parseInt(t2[1])); 
 							System.out.println(s.subSet(
 		                                               Integer.parseInt(
-		                                                t[0]), Integer.parseInt(t[1])));
+		                                                t2[0]), Integer.parseInt(t2[1])));
 		                    
 						} catch (Exception ex) {
 							System.out.println("Invalid Arguments to subset Exception");
