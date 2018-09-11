@@ -299,7 +299,8 @@ public final class Solution {
 
 					} catch (Exception ex) {
 						System.out.println(
-						  "Invalid Arguments to Subset Exception");
+						  "Invalid Arguments to Subset Exception"
+						  );
 					}
 				}
 				break;
