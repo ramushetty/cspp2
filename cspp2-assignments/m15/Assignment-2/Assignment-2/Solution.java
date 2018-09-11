@@ -165,7 +165,53 @@ class SortedSetADT {
 		}
 		return nset;
 	}
+
+	/**
+	   * { retains elements present in the set }.
+	   *
+	   * @param      arr   The arr
+	   *
+	   * @return     { returns set }
+	   */
+	public SortedSetADT retainAll(final int[] arr) {
+		SortedSetADT rset = new SortedSetADT();
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				if (set[i] == arr[j]) {
+					rset.add(set[i]);
+				}
+			}
+		}
+		return rset;
+
+
+	}
+
+	/**
+	   * { intesection() returns common elements}.
+	   *
+	   * @param      item  The item
+	   *
+	   * @return     { returns set }
+	   */
+	public SortedSetADT intersection(final SortedSetADT item) {
+		SortedSetADT nset = new SortedSetADT();
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < item.size; j++) {
+				if (set[i] == item.set[j]) {
+					nset.add(set[i]);
+				}
+
+			}
+		}
+		return nset;
+	}
+
+
+
 }
+
+
 /**
  * { item_description }.
  */
@@ -175,6 +221,27 @@ public final class Solution {
 	 */
 	private Solution() {
 		//empty.
+	}
+
+	/**
+	   * helper function to convert string input to int array.
+	   *
+	   * @param      s     { string input from test case file }
+	   *
+	   * @return     { int array from the given string }
+	   */
+	public static int[] intArray(final String s) {
+		String input = s;
+		if (input.equals("[]")) {
+			return new int[0];
+		}
+		if (s.contains("[")) {
+			input = s.substring(1, s.length() - 1);
+		}
+		return Arrays.stream(input.split(","))
+		       .mapToInt(Integer::parseInt)
+		       .toArray();
+
 	}
 	/**
 	 * { function_description }.
@@ -227,13 +294,30 @@ public final class Solution {
 
 						s.subSet(Integer.parseInt(t2[0]), Integer.parseInt(t2[1]));
 						System.out.println(s.subSet(
-						                       Integer.parseInt(
-						                           t2[0]), Integer.parseInt(t2[1])));
+						                     Integer.parseInt(
+						                       t2[0]), Integer.parseInt(t2[1])));
 
 					} catch (Exception ex) {
 						System.out.println("Invalid Arguments to Subset Exception");
 					}
 				}
+				break;
+			case "retainAll":
+				s = new SortedSetADT();
+				int[] intArray = intArray(tokens[1]);
+				intArray = intArray(tokens[1]);
+				s.addAll(intArray);
+				intArray = intArray(tokens[2]);
+				System.out.println(s.retainAll(intArray));
+				break;
+			case "intersection":
+				s = new SortedSetADT();
+				SortedSetADT t = new SortedSetADT();
+				intArray = intArray(tokens[1]);
+				s.addAll(intArray);
+				intArray = intArray(tokens[2]);
+				t.addAll(intArray);
+				System.out.println(s.intersection(t));
 				break;
 
 			}
