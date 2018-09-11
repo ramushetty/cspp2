@@ -147,7 +147,7 @@ class List {
    *
    * @throws     IndexOutOfBoundsException  { exception }
    */
-  public List subList(final int starting, final int ending) 
+  public List subList(final int starting, final int ending)
   throws IndexOutOfBoundsException {
     if (starting > size || ending > size) {
       throw new IndexOutOfBoundsException("Index Out of Bounds Exception");
