@@ -5,109 +5,115 @@ import java.util.Arrays;
  * Class for book your show.
  */
 class BookYourShow {
-	ArrayList<Show> showlist;
-	ArrayList<String> tickets;
-	/**
-	 * Constructer for bookyourshow.
-	 */
-	BookYourShow() {
-		showlist = new ArrayList<>();
-		tickets = new ArrayList<>();
-	}
-	void addAShow(final Show s) {
-		showlist.add(s);
-	}
-	Show getAShow(final String moviename, final String stime) {
-		for (Show show : showlist) {
-			if (show.getmname().equals(moviename) && show.getdatetime().equals(stime)) {
-				return show;
-			}
-		}
-		return null;
-	}
-	void bookAShow(final String movie, final String dati, final Patron nm, final String[] seats) {
-		Show show = getAShow(movie, dati);
-		if (show == null) {
-			System.out.println("No show");
-			return;
-		}
-		// System.out.println(nm);
-		boolean flag = false;
-		String[] sseats = show.getseats();
-		for (String seat : seats) {
-			for (int i = 0; i < sseats.length; i++) {
-				if (seat.equals(sseats[i])) {
-					show.setseats(i);
-					flag = true;
-				}
-			}
-		}
-		if (flag) {
-			// System.out.println("uo: "+nm.getmobilenumber());
-			tickets.add(nm.getmobilenumber() + " " + movie + " " + dati);
-		}
-	}
-	void printTicket(String movie, String showtime, String mobile) {
-		String t = mobile + " " + movie + " " + showtime;
-		if (tickets.contains(t)) {
+    /**
+     * { var_description }.
+     */
+    private ArrayList<Show> showlist;
+    /**
+     * { var_description }.
+     */
+    private ArrayList<String> tickets;
+    /**
+     * Constructer for bookyourshow.
+     */
+    BookYourShow() {
+        showlist = new ArrayList<>();
+        tickets = new ArrayList<>();
+    }
+    void addAShow(final Show s) {
+        showlist.add(s);
+    }
+    Show getAShow(final String moviename, final String stime) {
+        for (Show show : showlist) {
+            if (show.getmname().equals(moviename) && show.getdatetime().equals(stime)) {
+                return show;
+            }
+        }
+        return null;
+    }
+    void bookAShow(final String movie, final String dati, final Patron nm, final String[] seats) {
+        Show show = getAShow(movie, dati);
+        if (show == null) {
+            System.out.println("No show");
+            return;
+        }
+        // System.out.println(nm);
+        boolean flag = false;
+        String[] sseats = show.getseats();
+        for (String seat : seats) {
+            for (int i = 0; i < sseats.length; i++) {
+                if (seat.equals(sseats[i])) {
+                    show.setseats(i);
+                    flag = true;
+                }
+            }
+        }
+        if (flag) {
+            // System.out.println("uo: "+nm.getmobilenumber());
+            tickets.add(nm.getmobilenumber() + " " + movie + " " + dati);
+        }
+    }
+    void printTicket(String movie, String showtime, String mobile) {
+        String t = mobile + " " + movie + " " + showtime;
+        if (tickets.contains(t)) {
 
-			System.out.println(t);
-		} else {
-			System.out.println("Invalid");
-		}
+            System.out.println(t);
+        } else {
+            System.out.println("Invalid");
+        }
 
-	}
-	void showAll() {
-		for (Show show : showlist) {
-			System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
-		}
-	} 
+    }
+    void showAll() {
+        for (Show show : showlist) {
+            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
+        }
+    } 
 
 
 
 }
 class Show {
-	private String mname;
-	private String datetime;
-	private String[] seats;
-	Show(final String mname, final String datetime, final String[] seats) {
-		this.mname = mname;
-		this.datetime = datetime;
-		this.seats = seats;
-	}
-	String getmname() {
-		return mname;
-	}
-	String getdatetime() {
-		return datetime;
-	}
-	String[] getseats() {
-		return seats;
-	}
-	void setseats(int index) {
-		seats[index] = "N/A";
-	}
-	public String toString() {
-		return mname + "," + datetime;
-	}
+    private String mname;
+    private String datetime;
+    private String[] seats;
+    Show(final String mname, final String datetime, final String[] seats) {
+        this.mname = mname;
+        this.datetime = datetime;
+        this.seats = seats;
+    }
+    String getmname() {
+        return mname;
+    }
+    String getdatetime() {
+        return datetime;
+    }
+    String[] getseats() {
+        return seats;
+    }
+    void setseats(int index) {
+        seats[index] = "N/A";
+    }
+    public String toString() {
+        return mname + "," + datetime;
+    }
 
 }
 class Patron {
-	String pname;
-	String mobilenumber;
-	Patron(String pname, String mobilenumber) {
-		this.pname = pname;
-		this.mobilenumber = mobilenumber;
-	}
-	String getpname() {
-		return pname;
-	}
-	String getmobilenumber() {
-		return mobilenumber;
-	}
-	public String toString() {
-		return pname + " " + mobilenumber;
-	}
+    String pname;
+    String mobilenumber;
+    Patron(String pname, String mobilenumber) {
+        this.pname = pname;
+        this.mobilenumber = mobilenumber;
+    }
+    String getpname() {
+        return pname;
+    }
+    String getmobilenumber() {
+        return mobilenumber;
+    }
+    public String toString() {
+        return pname + " " + mobilenumber;
+    }
 
 }
 
