@@ -38,7 +38,8 @@ class BookYourShow {
      */
     Show getAShow(final String moviename, final String stime) {
         for (Show show : showlist) {
-            if (show.getmname().equals(moviename) && show.getdatetime().equals(stime)) {
+            if (show.getmname().equals(moviename) &&
+                show.getdatetime().equals(stime)) {
                 return show;
             }
         }
@@ -52,7 +53,8 @@ class BookYourShow {
      * @param      nm     { parameter_description }
      * @param      seats  The seats
      */
-    void bookAShow(final String movie, final String dati, final Patron nm, final String[] seats) {
+    void bookAShow(final String movie, final String dati,
+        final Patron nm, final String[] seats) {
         Show show = getAShow(movie, dati);
         if (show == null) {
             System.out.println("No show");
@@ -81,7 +83,8 @@ class BookYourShow {
      * @param      showtime  The showtime
      * @param      mobile    The mobile
      */
-    void printTicket(final String movie, final String showtime, final String mobile) {
+    void printTicket(final String movie,
+        final String showtime, final String mobile) {
         String t = mobile + " " + movie + " " + showtime;
         if (tickets.contains(t)) {
 
@@ -96,7 +99,9 @@ class BookYourShow {
      */
     void showAll() {
         for (Show show : showlist) {
-            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ", ""));
+            System.out.println(
+                show.toString() + "," + Arrays.toString(
+                    show.getseats()).replace(" ", ""));
         }
     }
 
