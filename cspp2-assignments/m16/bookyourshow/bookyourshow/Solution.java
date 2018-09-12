@@ -122,14 +122,14 @@ class Show {
     /**
      * Constructs the object.
      *
-     * @param      mname     The mname
-     * @param      datetime  The datetime
-     * @param      seats     The seats
+     * @param      mname1     The mname
+     * @param      datetime1  The datetime
+     * @param      seats1     The seats
      */
-    Show(final String mname, final String datetime, final String[] seats) {
-        this.mname = mname;
-        this.datetime = datetime;
-        this.seats = seats;
+    Show(final String mname1, final String datetime1, final String[] seats1) {
+        this.mname = mname1;
+        this.datetime = datetime1;
+        this.seats = seats1;
     }
     /**
      * { function_description }.
