@@ -188,8 +188,8 @@ class Patron {
     /**
      * Constructs the object.
      *
-     * @param      pname         The pname
-     * @param      mobilenumber  The mobilenumber
+     * @param      pname1         The pname
+     * @param      mobilenumber1  The mobilenumber
      */
     Patron(final String pname1, final String mobilenumber1) {
         this.pname = pname1;
