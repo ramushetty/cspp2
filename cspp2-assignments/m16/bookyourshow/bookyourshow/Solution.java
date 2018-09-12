@@ -6,11 +6,11 @@ import java.util.Arrays;
  */
 class BookYourShow {
     /**
-     * { var_description }.
+     * { arraylist show type }.
      */
     private ArrayList<Show> showlist;
     /**
-     * { var_description }.
+     * { arraylist of string type }.
      */
     private ArrayList<String> tickets;
     /**
@@ -23,7 +23,7 @@ class BookYourShow {
     /**
      * Adds a show.
      *
-     * @param      s     { parameter_description }
+     * @param      s     { adds shows }
      */
     void addAShow(final Show s) {
         showlist.add(s);
@@ -46,11 +46,11 @@ class BookYourShow {
         return null;
     }
     /**
-     * { function_description }.
+     * { books tickets  }.
      *
      * @param      movie  The movie
      * @param      dati   The dati
-     * @param      nm     { parameter_description }
+     * @param      nm     { parton object }
      * @param      seats  The seats
      */
     void bookAShow(final String movie, final String dati,
@@ -77,7 +77,7 @@ class BookYourShow {
         }
     }
     /**
-     * { function_description }.
+     * { prints booked tickets }.
      *
      * @param      movie     The movie
      * @param      showtime  The showtime
@@ -113,15 +113,15 @@ class BookYourShow {
  */
 class Show {
     /**
-     * { var_description }.
+     * { movie name }.
      */
     private String mname;
     /**
-     * { var_description }.
+     * { show time }.
      */
     private String datetime;
     /**
-     * { var_description }.
+     * { seats }.
      */
     private String[] seats;
     /**
@@ -137,31 +137,31 @@ class Show {
         this.seats = seats1;
     }
     /**
-     * { function_description }.
+     * { returns movie name }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns string(moviename) }
      */
     String getmname() {
         return mname;
     }
     /**
-     * { function_description }.
+     * { showtime of movie }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns date and time }
      */
     String getdatetime() {
         return datetime;
     }
     /**
-     * { function_description }.
+     * { available seats }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns seats }
      */
     String[] getseats() {
         return seats;
     }
     /**
-     * { function_description }.
+     * { set seats to n/a }.
      *
      * @param      index  The index
      */
@@ -183,11 +183,11 @@ class Show {
  */
 class Patron {
     /**
-     * { var_description }.
+     * { name of a person }.
      */
     private String pname;
     /**
-     * { var_description }.
+     * { person mobile number }.
      */
     private String mobilenumber;
     /**
@@ -201,17 +201,17 @@ class Patron {
         this.mobilenumber = mobilenumber1;
     }
     /**
-     * { function_description }.
+     * { persons list }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns person list }
      */
     String getpname() {
         return pname;
     }
     /**
-     * { function_description }.
+     * { mobile numbers list }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns mobile number }
      */
     String getmobilenumber() {
         return mobilenumber;
