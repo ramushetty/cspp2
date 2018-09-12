@@ -191,9 +191,9 @@ class Patron {
      * @param      pname         The pname
      * @param      mobilenumber  The mobilenumber
      */
-    Patron(final String pname, final String mobilenumber) {
-        this.pname = pname;
-        this.mobilenumber = mobilenumber;
+    Patron(final String pname1, final String mobilenumber1) {
+        this.pname = pname1;
+        this.mobilenumber = mobilenumber1;
     }
     /**
      * { function_description }.
