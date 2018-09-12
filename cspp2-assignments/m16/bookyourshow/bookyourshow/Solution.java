@@ -96,9 +96,9 @@ class BookYourShow {
      */
     void showAll() {
         for (Show show : showlist) {
-            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
+            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ", ""));
         }
-    } 
+    }
 
 
 
@@ -246,43 +246,43 @@ public final class Solution {
                 replace("[", "").replace("]", "").split(",");
             String[] check = tokens[0].split(" ");
             switch (check[0]) {
-                case "add":
-                    int k = 2;
-                    String[] seats = new String[tokens.length - 2];
-                    for (int j = 0; j < seats.length; j++) {
-                        seats[j] = tokens[k++];
-                    }
-                    bys.addAShow(new Show(check[1], tokens[1], seats));
+            case "add":
+                int k = 2;
+                String[] seats = new String[tokens.length - 2];
+                for (int j = 0; j < seats.length; j++) {
+                    seats[j] = tokens[k++];
+                }
+                bys.addAShow(new Show(check[1], tokens[1], seats));
                 break;
 
-                case "book":
-                    k = 2 + 2;
-                    seats = new String[tokens.length - 2 - 2];
-                    for (int j = 0; j < seats.length; j++) {
-                        seats[j] = tokens[k++];
-                    }
-                    bys.bookAShow(check[1], tokens[1],
-                        new Patron(tokens[2], tokens[2 + 1]), seats);
+            case "book":
+                k = 2 + 2;
+                seats = new String[tokens.length - 2 - 2];
+                for (int j = 0; j < seats.length; j++) {
+                    seats[j] = tokens[k++];
+                }
+                bys.bookAShow(check[1], tokens[1],
+                              new Patron(tokens[2], tokens[2 + 1]), seats);
                 break;
 
-                case "get":
-                    Show show = bys.getAShow(check[1], tokens[1]);
-                    if (show != null) {
-                       System.out.println(show);
-                    } else {
-                        System.out.println("No show");
-                    }
+            case "get":
+                Show show = bys.getAShow(check[1], tokens[1]);
+                if (show != null) {
+                    System.out.println(show);
+                } else {
+                    System.out.println("No show");
+                }
                 break;
 
-                case "print":
-                    bys.printTicket(check[1], tokens[1], tokens[2]);
+            case "print":
+                bys.printTicket(check[1], tokens[1], tokens[2]);
                 break;
 
-                case "showAll":
-                    bys.showAll();
+            case "showAll":
+                bys.showAll();
                 break;
 
-                default:
+            default:
                 break;
             }
         }
