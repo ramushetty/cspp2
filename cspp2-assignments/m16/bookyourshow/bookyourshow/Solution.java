@@ -145,7 +145,7 @@ public final class Solution {
                     }
                     bys.bookAShow(check[1], tokens[1],
                         new Patron(tokens[2], tokens[2 + 1]), seats);
-                // break;
+                break;
 
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
