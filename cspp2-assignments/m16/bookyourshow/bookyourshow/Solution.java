@@ -38,8 +38,8 @@ class BookYourShow {
      */
     Show getAShow(final String moviename, final String stime) {
         for (Show show : showlist) {
-            if (show.getmname().equals(moviename) &&
-                show.getdatetime().equals(stime)) {
+            if (show.getmname().equals(moviename)
+                && show.getdatetime().equals(stime)) {
                 return show;
             }
         }
