@@ -26,19 +26,19 @@ class BookYourShow {
 			System.out.println("No show");
 			return;
 		}
-		System.out.println(nm);
+		// System.out.println(nm);
 		boolean flag = false;
 		String[] sseats = show.getseats();
 		for (String seat : seats) {
 			for (int i = 0; i < sseats.length; i++) {
-				if (seats.equals(sseats[i])) {
+				if (seat.equals(sseats[i])) {
 					show.setseats(i);
 					flag = true;
 				}
 			}
 		}
 		if (flag) {
-			System.out.println(nm.getmobilenumber());
+			// System.out.println("uo: "+nm.getmobilenumber());
 			tickets.add(nm.getmobilenumber() + " " + movie + " " + dati);
 		}
 	}
