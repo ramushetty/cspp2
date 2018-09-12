@@ -20,9 +20,22 @@ class BookYourShow {
         showlist = new ArrayList<>();
         tickets = new ArrayList<>();
     }
+    /**
+     * Adds a show.
+     *
+     * @param      s     { parameter_description }
+     */
     void addAShow(final Show s) {
         showlist.add(s);
     }
+    /**
+     * Gets a show.
+     *
+     * @param      moviename  The moviename
+     * @param      stime      The stime
+     *
+     * @return     A show.
+     */
     Show getAShow(final String moviename, final String stime) {
         for (Show show : showlist) {
             if (show.getmname().equals(moviename) && show.getdatetime().equals(stime)) {
@@ -31,6 +44,14 @@ class BookYourShow {
         }
         return null;
     }
+    /**
+     * { function_description }.
+     *
+     * @param      movie  The movie
+     * @param      dati   The dati
+     * @param      nm     { parameter_description }
+     * @param      seats  The seats
+     */
     void bookAShow(final String movie, final String dati, final Patron nm, final String[] seats) {
         Show show = getAShow(movie, dati);
         if (show == null) {
@@ -53,6 +74,13 @@ class BookYourShow {
             tickets.add(nm.getmobilenumber() + " " + movie + " " + dati);
         }
     }
+    /**
+     * { function_description }.
+     *
+     * @param      movie     The movie
+     * @param      showtime  The showtime
+     * @param      mobile    The mobile
+     */
     void printTicket(String movie, String showtime, String mobile) {
         String t = mobile + " " + movie + " " + showtime;
         if (tickets.contains(t)) {
@@ -63,6 +91,9 @@ class BookYourShow {
         }
 
     }
+    /**
+     * Shows all.
+     */
     void showAll() {
         for (Show show : showlist) {
             System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
@@ -72,45 +103,119 @@ class BookYourShow {
 
 
 }
+/**
+ * Class for show.
+ */
 class Show {
+    /**
+     * { var_description }.
+     */
     private String mname;
+    /**
+     * { var_description }.
+     */
     private String datetime;
+    /**
+     * { var_description }.
+     */
     private String[] seats;
+    /**
+     * Constructs the object.
+     *
+     * @param      mname     The mname
+     * @param      datetime  The datetime
+     * @param      seats     The seats
+     */
     Show(final String mname, final String datetime, final String[] seats) {
         this.mname = mname;
         this.datetime = datetime;
         this.seats = seats;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String getmname() {
         return mname;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String getdatetime() {
         return datetime;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String[] getseats() {
         return seats;
     }
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     */
     void setseats(int index) {
         seats[index] = "N/A";
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return mname + "," + datetime;
     }
 
 }
+/**
+ * Class for patron.
+ */
 class Patron {
-    String pname;
-    String mobilenumber;
+    /**
+     * { var_description }.
+     */
+    private String pname;
+    /**
+     * { var_description }.
+     */
+    private String mobilenumber;
+    /**
+     * Constructs the object.
+     *
+     * @param      pname         The pname
+     * @param      mobilenumber  The mobilenumber
+     */
     Patron(String pname, String mobilenumber) {
         this.pname = pname;
         this.mobilenumber = mobilenumber;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String getpname() {
         return pname;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String getmobilenumber() {
         return mobilenumber;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return pname + " " + mobilenumber;
     }
