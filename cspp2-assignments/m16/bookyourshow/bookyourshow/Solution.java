@@ -81,7 +81,7 @@ class BookYourShow {
      * @param      showtime  The showtime
      * @param      mobile    The mobile
      */
-    void printTicket(String movie, String showtime, String mobile) {
+    void printTicket(final String movie, final String showtime, final String mobile) {
         String t = mobile + " " + movie + " " + showtime;
         if (tickets.contains(t)) {
 
@@ -160,7 +160,7 @@ class Show {
      *
      * @param      index  The index
      */
-    void setseats(int index) {
+    void setseats(final int index) {
         seats[index] = "N/A";
     }
     /**
@@ -191,7 +191,7 @@ class Patron {
      * @param      pname         The pname
      * @param      mobilenumber  The mobilenumber
      */
-    Patron(String pname, String mobilenumber) {
+    Patron(final String pname, final String mobilenumber) {
         this.pname = pname;
         this.mobilenumber = mobilenumber;
     }
