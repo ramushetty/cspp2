@@ -98,6 +98,9 @@ class Patron {
 	String getmobilenumber() {
 		return mobilenumber;
 	}
+	public String toString() {
+		return pname + " " + mobilenumber;
+	}
 
 }
 
