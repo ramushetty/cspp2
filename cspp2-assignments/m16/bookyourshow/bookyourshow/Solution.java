@@ -1,10 +1,15 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
 	ArrayList<Show> showlist;
 	ArrayList<String> tickets;
+	/**
+	 * Constructer for bookyourshow.
+	 */
 	BookYourShow() {
 		showlist = new ArrayList<>();
 		tickets = new ArrayList<>();
