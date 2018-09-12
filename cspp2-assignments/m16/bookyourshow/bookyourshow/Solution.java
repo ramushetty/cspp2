@@ -26,6 +26,7 @@ class BookYourShow {
 			System.out.println("No show");
 			return;
 		}
+		System.out.println(nm);
 		boolean flag = false;
 		String[] sseats = show.getseats();
 		for (String seat : seats) {
@@ -37,6 +38,7 @@ class BookYourShow {
 			}
 		}
 		if (flag) {
+			System.out.println(nm.getmobilenumber());
 			tickets.add(nm.getmobilenumber() + " " + movie + " " + dati);
 		}
 	}
