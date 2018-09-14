@@ -106,15 +106,15 @@ class ShoppingCart {
 	}
 
 	public float getPayableAmount() {
-		System.out.println("hi");
+		// System.out.println("hi");
 		float dsc = 0.01f * coupon;
 		return (gettotalamount() * (1f - dsc)) * 1.15f;
 
 	}
 	public void applyCoupon(String couponCode) {
-		System.out.println("---------------------");
+		// System.out.println("---------------------");
 		if (couponCodes.contains(couponCode)) {
-			System.out.println(cflag + "----Flag");
+			// System.out.println(cflag + "----Flag");
 			if (!cflag) {
 				coupon = Integer.parseInt(couponCode.substring(3));
 				cflag = true;
