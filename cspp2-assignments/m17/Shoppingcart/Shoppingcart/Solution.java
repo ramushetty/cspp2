@@ -12,12 +12,12 @@ class Item {
 		this.productname = productname1;
 		this.quantity = quantity1;
 		this.price = price1;
-		this.flag = false;
+		this.flag = true;
 	}
 	Item(String productname2, int quantity2) {
 		this.productname = productname2;
 		this.quantity = quantity2;
-		this.flag = false;
+		// this.flag = false;
 	}
 	// System.out.println(quantity);
 	String getproductname() {
