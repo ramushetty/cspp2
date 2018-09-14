@@ -307,7 +307,8 @@ class ShoppingCart {
                            + Math.round((FA * coupon * total) * NUM2) / NUM2);
         System.out.println("Tax:"
                 + ((int) ((total * (1f - (FA * coupon)) * FAAA) * NUM1)) / NUM);
-        System.out.println("Payable amount: " + ((int) (getPayableAmount() * NUM1)) / NUM);
+        System.out.println("Payable amount: "
+            + ((int) (getPayableAmount() * NUM1)) / NUM);
 
     }
 }
@@ -318,6 +319,15 @@ public final class Solution {
     /**
      * Constructs the object.
      */
+
+    /**
+     * { number num3 }.
+     */
+    private static final float NUM3 = 10.0f;
+    /**
+     * { number num4}.
+     */
+    private static final int NUM4 = 10;
     private Solution() {
         //empty.
     }
@@ -360,7 +370,7 @@ public final class Solution {
                 break;
             case "payableAmount":
                 System.out.println("Payable amount: "
-                                   + ((int) (s.getPayableAmount() * 10)) / 10.0);
+                        + ((int) (s.getPayableAmount() * 10)) / 10.0);
                 break;
             case "remove":
                 if (tokens.length > 1) {
