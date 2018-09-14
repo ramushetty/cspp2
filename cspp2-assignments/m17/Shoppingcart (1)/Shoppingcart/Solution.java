@@ -299,14 +299,14 @@ class ShoppingCart {
         System.out.println("Name   quantity   Price");
         for (Item e : cartlist) {
             System.out.println(e.getproductname() + " "
-                               + e.getquantity() + " " + getPrice(e.getproductname()));
+            + e.getquantity() + " " + getPrice(e.getproductname()));
         }
         float total = gettotalamount();
         System.out.println("Total:" + total);
         System.out.println("Disc%:"
                            + Math.round((FA * coupon * total) * NUM2) / NUM2);
         System.out.println("Tax:"
-                           + ((int) ((total * (1f - (FA * coupon)) * FAAA) * NUM1)) / NUM);
+                + ((int) ((total * (1f - (FA * coupon)) * FAAA) * NUM1)) / NUM);
         System.out.println("Payable amount: " + ((int) (getPayableAmount() * NUM1)) / NUM);
 
     }
