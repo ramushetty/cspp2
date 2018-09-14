@@ -194,6 +194,7 @@ public class Solution {
 						String[] r = tokens[1].split(",");
 						int r1 = Integer.parseInt(r[1]);
 						s.removeFromCart(new Item(r[0], r1));
+						break;
 					}
 					break;
 				case "print":
@@ -203,6 +204,7 @@ public class Solution {
 					if (tokens.length > 1) {
 						String coupon = tokens[1];
 						s.applyCoupon(coupon);
+						break;
 					}
 					break;
 			}
