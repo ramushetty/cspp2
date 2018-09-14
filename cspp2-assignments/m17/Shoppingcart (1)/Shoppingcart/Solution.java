@@ -139,7 +139,7 @@ class ShoppingCart {
     /**
      * { number num1}.
      */
-    private static final int NUM1 = 10;
+    private static final float NUM1 = 10f;
     /**
      * { string arr}.
      */
