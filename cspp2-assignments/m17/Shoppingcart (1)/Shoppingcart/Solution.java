@@ -123,6 +123,10 @@ class ShoppingCart {
      * { fa value  }.
      */
     private static final float FA = 0.01f;
+    /**
+     * { number three}.
+     */
+    private static final int THREE = 3;
     
     /**
      * { number num }.
@@ -264,7 +268,7 @@ class ShoppingCart {
         if (couponCodes.contains(couponCode)) {
             // System.out.println(cflag + "----Flag");
             if (!cflag) {
-                coupon = Integer.parseInt(couponCode.substring(3));
+                coupon = Integer.parseInt(couponCode.substring(THREE));
                 cflag = true;
             }
             return;
