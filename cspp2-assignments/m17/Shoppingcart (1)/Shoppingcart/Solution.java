@@ -141,6 +141,10 @@ class ShoppingCart {
      */
     private static final int NUM1 = 10;
     /**
+     * { number num2}.
+     */
+    private static final float NUM2 = 100.0f;
+    /**
      * { string arr}.
      */
     private String[] arr = {"IND10", "IND20", "IND30", "IND50"};
@@ -294,7 +298,7 @@ class ShoppingCart {
         }
         float total = gettotalamount();
         System.out.println("Total:" + total);
-        System.out.println("Disc%:" + Math.round((FA * coupon * total)*100.0)/100.0);
+        System.out.println("Disc%:" + Math.round((FA * coupon * total)*NUM2)/NUM2);
         System.out.println("Tax:" + ((int)((total * (1f - (FA * coupon)) * FAAA) * NUM1)) / NUM);
         System.out.println("Payable amount: " + ((int)(getPayableAmount() * NUM1)) / NUM);
 
