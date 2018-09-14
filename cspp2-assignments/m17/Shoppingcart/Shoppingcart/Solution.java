@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.*;
 class Item {
 	private String productname;
 	private int quantity;
@@ -11,7 +12,7 @@ class Item {
 		this.productname = productname1;
 		this.quantity = quantity1;
 		this.price = price1;
-		this.flag = true;
+		this.flag = false;
 	}
 	Item(String productname2, int quantity2) {
 		this.productname = productname2;
@@ -38,13 +39,19 @@ class Item {
 	public void setquantity(int item1) {
 		this.quantity = item1;
 	}
+	public float setPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
 
 }
 class ShoppingCart {
 	ArrayList<Item> cataloglist;
 	ArrayList<Item> cartlist;
 	String[] arr = {"IND10", "IND20", "IND30", "IND50"};
-	private ArrayList<String> couponcode = new ArrayList<>(Arrays.asList(arr));
+	private ArrayList<String> couponCodes = new ArrayList<>(Arrays.asList(arr));
 	private float coupon = 0.0f;
 	private boolean cflag = false;
 	ShoppingCart() {
@@ -62,9 +69,11 @@ class ShoppingCart {
 				for (Item g : cartlist) {
 					if (g.getproductname().equals(item.getproductname())) {
 						g.setquantity(g.getquantity() + item.getquantity());
+						return;
 					}
 				}
 				cartlist.add(item);
+				return;
 			}
 		}
 		
@@ -97,16 +106,20 @@ class ShoppingCart {
 	}
 
 	public float getPayableAmount() {
+		System.out.println("hi");
 		float dsc = 0.01f * coupon;
 		return (gettotalamount() * (1f - dsc)) * 1.15f;
 
 	}
-	public void applyCouponcode(String couponCode) {
-		if (couponcode.contains(couponCode)) {
+	public void applyCoupon(String couponCode) {
+		System.out.println("---------------------");
+		if (couponCodes.contains(couponCode)) {
+			System.out.println(cflag + "----Flag");
 			if (!cflag) {
 				coupon = Integer.parseInt(couponCode.substring(3));
 				cflag = true;
 			}
+			return;
 		}
 		System.out.println("Invalid coupon");
 	}
@@ -115,8 +128,10 @@ class ShoppingCart {
 			if (e.getproductname().equals(item.getproductname())) {
 				if (e.getquantity() == item.getquantity()) {
 					cartlist.remove(e);
+					return;
 				}
 				e.setquantity(e.getquantity() - item.getquantity());
+				return;
 			}
 		}
 	}
@@ -171,8 +186,8 @@ public class Solution {
 				case "totalAmount":
 					System.out.println("totalAmount: " + s.gettotalamount());
 				 	break;
-				case "PayableAmount":
-					System.out.println("Payable amount: " + s.getPayableAmount());
+				case "payableAmount":
+					System.out.println("Payable amount: " + ((int)(s.getPayableAmount() * 10)) / 10.0);
 					break;
 				case "remove":
 					if (tokens.length > 1) {
@@ -186,7 +201,8 @@ public class Solution {
 					break;
 				case "coupon":
 					if (tokens.length > 1) {
-						s.applyCouponcode(tokens[1]);
+						String coupon = tokens[1];
+						s.applyCoupon(coupon);
 					}
 					break;
 			}
