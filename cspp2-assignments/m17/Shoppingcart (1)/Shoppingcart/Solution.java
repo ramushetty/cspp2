@@ -29,7 +29,7 @@ class Item {
 	 * @param      quantity1     The quantity 1
 	 * @param      price1        The price 1
 	 */
-	Item(String productname1, int quantity1, float price1) {
+	Item(final String productname1, final int quantity1, final float price1) {
 		this.productname = productname1;
 		this.quantity = quantity1;
 		this.price = price1;
@@ -41,7 +41,7 @@ class Item {
 	 * @param      productname2  The productname 2
 	 * @param      quantity2     The quantity 2
 	 */
-	Item(String productname2, int quantity2) {
+	Item(final String productname2, final int quantity2) {
 		this.productname = productname2;
 		this.quantity = quantity2;
 		// this.flag = false;
@@ -86,7 +86,7 @@ class Item {
 	 *
 	 * @param      item1  The item 1
 	 */
-	public void setquantity(int item1) {
+	public void setquantity(final int item1) {
 		this.quantity = item1;
 	}
 	/**
@@ -102,7 +102,7 @@ class Item {
 	 *
 	 * @param      price  The price
 	 */
-	public void setPrice(float price) {
+	public void setPrice(final float price) {
 		this.price = price;
 	}
 
@@ -145,7 +145,7 @@ class ShoppingCart {
 	 *
 	 * @param      item  The item
 	 */
-	public void addToCatalog(Item item) {
+	public void addToCatalog(final Item item) {
 		cataloglist.add(item);
 		// System.out.println(itemlist.get(0).getprice());
 	}
@@ -154,7 +154,7 @@ class ShoppingCart {
 	 *
 	 * @param      item  The item
 	 */
-	public void addToCart(Item item) {
+	public void addToCart(final Item item) {
 		for (Item e : cataloglist) {
 			if (e.getproductname().equals(item.getproductname())) {
 				for (Item g : cartlist) {
@@ -205,7 +205,7 @@ class ShoppingCart {
 	 *
 	 * @return     The price.
 	 */
-	public float getPrice(String item) {
+	public float getPrice(final String item) {
 		for (Item e : cataloglist) {
 			if (e.getproductname().equals(item)) {
 				return e.getprice();
@@ -229,7 +229,7 @@ class ShoppingCart {
 	 *
 	 * @param      couponCode  The coupon code
 	 */
-	public void applyCoupon(String couponCode) {
+	public void applyCoupon(final String couponCode) {
 		// System.out.println("---------------------");
 		if (couponCodes.contains(couponCode)) {
 			// System.out.println(cflag + "----Flag");
@@ -246,7 +246,7 @@ class ShoppingCart {
 	 *
 	 * @param      item  The item
 	 */
-	public void removeFromCart(Item item) {
+	public void removeFromCart(final Item item) {
 		for (Item e : cartlist) {
 			if (e.getproductname().equals(item.getproductname())) {
 				if (e.getquantity() == item.getquantity()) {
@@ -289,7 +289,7 @@ public class Solution {
 	 *
 	 * @param      args  The arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		ShoppingCart s = new ShoppingCart();
 		Scanner inp = new Scanner(new BufferedInputStream(System.in));
 		while (inp.hasNext()) {
