@@ -100,7 +100,7 @@ class Item {
     /**
      * Sets the price.
      *
-     * @param      price  The price
+     * @param      price1  The price
      */
     public void setPrice(final float price1) {
         this.price = price1;
@@ -119,6 +119,27 @@ class ShoppingCart {
      * { arraylist of items of cartlist }.
      */
     private ArrayList<Item> cartlist;
+    /**
+     * { fa value  }.
+     */
+    private static final float FA = 0.01f;
+    
+    /**
+     * { number num }.
+     */
+    private static final float NUM = 10.0f;
+    /**
+     * {float nuber faa }.
+     */
+    private static final float FAA = 1.15f;
+    /**
+     * { float number faaa }.
+     */
+    private static final float FAAA = 0.15f;
+    /**
+     * { number num1}.
+     */
+    private static final int NUM1 = 10;
     /**
      * { string arr}.
      */
@@ -224,8 +245,9 @@ class ShoppingCart {
      */
     public float getPayableAmount() {
         // System.out.println("hi");
-        float dsc = 0.01f * coupon;
-        return (gettotalamount() * (1f - dsc)) * 1.15f;
+        
+        float dsc = FA * coupon;
+        return (gettotalamount() * (1f - dsc)) * FAA;
 
     }
     /**
@@ -272,9 +294,9 @@ class ShoppingCart {
         }
         float total = gettotalamount();
         System.out.println("Total:" + total);
-        System.out.println("Disc%:" + 0.01 * coupon * total);
-        System.out.println("Tax:" + ((int)((total * (1f - (0.01f * coupon)) * 0.15f) * 10)) / 10.0);
-        System.out.println("Payable amount: " + ((int)(getPayableAmount() * 10)) / 10.0);
+        System.out.println("Disc%:" + FA * coupon * total);
+        System.out.println("Tax:" + ((int)((total * (1f - (FA * coupon)) * FAAA) * NUM1)) / NUM);
+        System.out.println("Payable amount: " + ((int)(getPayableAmount() * NUM1)) / NUM);
 
     }
 }
