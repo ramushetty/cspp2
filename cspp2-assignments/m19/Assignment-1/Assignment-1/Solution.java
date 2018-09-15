@@ -184,6 +184,6 @@ public final class Solution {
 				}
 				}
 		}
-		System.out.println(total);
+		// System.out.println(total);
 	}
 }
