@@ -118,7 +118,7 @@ public final class Solution {
 						Quiz obj = new Quiz(tokens[0], tokens[1], tokens[2], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
 						q.add(obj);
 					} else {
-						System.out.println("<question text> does not have enough answer choices");
+						System.out.println("<" + tokens[0] +">" + " does not have enough answer choices");
 						break;
 					}
 
