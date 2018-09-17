@@ -346,8 +346,11 @@ public final class Solution {
 					System.out.println("antman");
 				}
 			}
-			if (c != 0)
-			System.out.println("Total Score: " + total);
+			if (c == p.length - 1)
+			break;
 		}
+
+		if (c == p.length - 1)
+			System.out.println("Total Score: " + total);
     }
 }
