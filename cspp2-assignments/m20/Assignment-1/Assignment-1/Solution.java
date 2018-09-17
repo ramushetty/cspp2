@@ -342,7 +342,7 @@ public final class Solution {
 				}
 			} 
 		} 
-		if (c  == p.length -1) {
+		if (c  != 0) {
 			System.out.println("Total Score: " + total);
 		}
     }
