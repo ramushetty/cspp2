@@ -236,14 +236,14 @@ public final class Solution {
       }
     }
   }
-  private static String[] p = new String[10];
+  private static String[] p = new String[2 + 2 + 2 + 2];
 
   /**
    * Loads questions.
    *
    * @param      scan       The scan
    * @param      quiz       The quiz
-   * @param      q          The question count
+   * @param      z          The question count
    *
    */
   public static void loadQuestions(final Scanner scan,
@@ -252,12 +252,12 @@ public final class Solution {
     // tokenize the question line and create the question object
     // add the question objects to the quiz class
     int count = 0;
-    if (z > 0 ) {
+    if (z > 0) {
       for (int i = 0; i < z; i++) {
         String line = scan.nextLine();
         String[] tokens = line.split(":");
 
-        if ((tokens.length == (2 + 2 +1)) && !(tokens[0].equals(""))) {
+        if ((tokens.length == (2 + 2 + 1)) && !(tokens[0].equals(""))) {
           String[] choi = tokens[1].split(",");
           if (choi.length >= 2) {
             if (Integer.parseInt(tokens[2 + 1]) > 0) {
@@ -265,7 +265,8 @@ public final class Solution {
               if (Integer.parseInt(tokens[2]) <= choi.length) {
                 if (Integer.parseInt(tokens[2 + 2]) <= 0) {
                   q.add(new Question(tokens[0], tokens[1],
-  Integer.parseInt(tokens[2]), Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[4])));
+  Integer.parseInt(tokens[2]), Integer.parseInt(
+    tokens[2 + 1]), Integer.parseInt(tokens[4])));
                   count++;
 
                   if (count == z) {
@@ -286,7 +287,8 @@ public final class Solution {
 
 
           } else {
-            System.out.println(tokens[0] + " does not have enough answer choices");
+            System.out.println(
+              tokens[0] + " does not have enough answer choices");
           }
         } else {
           System.out.println("Error! Malformed question");
@@ -301,7 +303,7 @@ public final class Solution {
    *
    * @param      scan  The scan
    * @param      quiz  The quiz
-   * @param      q     The answer count
+   * @param      a     The answer count
    */
   public static void startQuiz(final Scanner scan,
                                final ArrayList<Question> quiz, final int a) {
@@ -338,10 +340,9 @@ public final class Solution {
     for (Question e : quiz) {
       System.out.println(e.getquestiontext());
       if (i < p.length) {
-        // System.out.println(e.getCorrectAnswer());
-        // System.out.println(p[i]);
         if (e.evaluateResponse(p[i])) {
-          System.out.println(" Correct Answer! - Marks Awarded: " + e.getMaxMarks());
+          System.out.println(
+            " Correct Answer! - Marks Awarded: " + e.getMaxMarks());
           total += e.getMaxMarks();
           i++;
           c++;
