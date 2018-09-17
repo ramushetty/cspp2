@@ -264,7 +264,7 @@ public final class Solution {
 								count++;
 
 								if (count == z) {
-									System.out.println(z + " questions added to Quiz");
+									System.out.println(z + " are added to Quiz");
 								}
 
 							} else {
