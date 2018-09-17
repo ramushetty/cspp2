@@ -326,7 +326,8 @@ public final class Solution {
 		int c = 0; 
 		int i = 0;
 			for (Question e : quiz) {
-				if (e.getCorrectAnswer().equals(p[i])) {
+				System.out.println(e.getquestiontext());
+				if (e.getChoice().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					c++;
@@ -337,7 +338,7 @@ public final class Solution {
 				}
 			}
 			if (c != 0)
-			System.out.println(total);
+			System.out.println("Total Score: " + total);
 			i++;
 	
     }
