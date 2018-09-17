@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 /**
  * Class for question.
  */
@@ -236,13 +235,17 @@ public final class Solution {
       }
     }
   }
-  private static String[] p = new String[2 + 2 + 2 + 2];
+
+  /**
+   * { var_description }.
+   */
+  private static String[] p = new String[2 + 2 + 2 + 2 + 2 + 2];
 
   /**
    * Loads questions.
    *
    * @param      scan       The scan
-   * @param      quiz       The quiz
+   * @param      q          The quiz
    * @param      z          The question count
    *
    */
@@ -266,7 +269,7 @@ public final class Solution {
                 if (Integer.parseInt(tokens[2 + 2]) <= 0) {
                   q.add(new Question(tokens[0], tokens[1],
   Integer.parseInt(tokens[2]), Integer.parseInt(
-    tokens[2 + 1]), Integer.parseInt(tokens[4])));
+    tokens[2 + 1]), Integer.parseInt(tokens[2 + 2])));
                   count++;
 
                   if (count == z) {
