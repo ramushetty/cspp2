@@ -313,7 +313,7 @@ public final class Solution {
 		}
 		for (int i = 0; i < countt; i++) {
 			String ss = scan.nextLine();
-			p[i] = ss + i;
+			p[i] = ss;
 		}
 	}
 	/**
@@ -330,8 +330,8 @@ public final class Solution {
 		for (Question e : quiz) {
 			System.out.println(e.getquestiontext());
 			if (i < p.length - 1) {
-                System.out.println(e.getCorrectAnswer());
-                System.out.println(p[i]);
+                // System.out.println(e.getCorrectAnswer());
+                // System.out.println(p[i]);
 				if (e.evaluateResponse(p[i])) {
 					System.out.println(" Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
