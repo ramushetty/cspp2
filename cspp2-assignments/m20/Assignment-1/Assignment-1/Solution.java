@@ -331,15 +331,18 @@ public final class Solution {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					c++;
+					i++;
+
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
 					c++;
+					
+					i++;
 				}
 			}
 			if (c != 0)
 			System.out.println("Total Score: " + total);
-			i++;
 	
     }
 }
