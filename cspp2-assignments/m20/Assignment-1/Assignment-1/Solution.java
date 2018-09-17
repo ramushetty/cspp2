@@ -260,17 +260,21 @@ public final class Solution {
 					String[] choi = tokens[1].split(",");
 					if (choi.length >= 2) {
 						if (Integer.parseInt(tokens[3]) > 0) { 
-							if (Integer.parseInt(tokens[4]) <= 0) {
-								q.add(new Question(tokens[0], tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-								count++;
+                            if (Integer.parseInt(tokens[3]) <= choi.length) {
+    							if (Integer.parseInt(tokens[4]) <= 0) {
+    								q.add(new Question(tokens[0], tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+    								count++;
 
-								if (count == z) {
-									System.out.println(z + " are added to the quiz");
-								}
+    								if (count == z) {
+    									System.out.println(z + " are added to the quiz");
+    								}
 
-							} else {
-								System.out.println("Invalid penalty for " + tokens[0]);
-							}
+    							} else {
+    								System.out.println("Invalid penalty for " + tokens[0]);
+    							}
+                            } else {
+                                System.out.println("Error! correct answer choice number id out of range for " + tokens[0]);
+                            }
 
 						} else {
 							System.out.println("Invalid max marks for " + tokens[0]);
