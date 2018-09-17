@@ -266,6 +266,7 @@ public final class Solution {
 
 								if (count == z) {
 									System.out.println(z + " questions added to Quiz");
+								}
 
 							} else {
 								System.out.println("Invalid penalty for " + tokens[0]);
@@ -275,7 +276,7 @@ public final class Solution {
 							System.out.println("Invalid max marks for " + tokens[0]);
 						}
 
-						}
+						
 					} else {
 						System.out.println(tokens[0] + " does not have enough answer choices");
 					}
