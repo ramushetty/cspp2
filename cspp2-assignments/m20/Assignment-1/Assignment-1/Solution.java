@@ -251,7 +251,7 @@ public final class Solution {
 				String line = scan.nextLine();
 				String[] tokens = line.split(":");
 
-				if (tokens.length == 5 && tokens[0] != "") {
+				if ((tokens.length == 5) && !(tokens[0].equals(""))) {
 					String[] choi = tokens[1].split(",");
 					if (choi.length >= 2) {
 						q.add(new Question(tokens[0], tokens[1], Integer.parseInt
