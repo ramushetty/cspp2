@@ -274,7 +274,7 @@ public final class Solution {
     								System.out.println("Invalid penalty for " + tokens[0]);
     							}
                             } else {
-                                System.out.println("Error! Correct answer choice number id out of range for " + tokens[0]);
+                                System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
                             }
 
 						} else {
