@@ -328,13 +328,14 @@ public final class Solution {
 
 		for (Question e : quiz) {
 			if (i < p.length - 1) {
-				i++;
 				if (e.getCorrectAnswer().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
+					i++;
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
+					i++;
 				}
 			} 
 		} 
