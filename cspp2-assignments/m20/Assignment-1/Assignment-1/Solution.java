@@ -69,7 +69,7 @@ class Question {
 	 * @return     The correct answer.
 	 */
 	public String getCorrectAnswer() {
-		return correctAnswer;
+		return "choice" + " " + correctAnswer;
 	}
 	/**
 	 * Gets the question text.
@@ -342,7 +342,7 @@ public final class Solution {
 					c++;
 					
 					
-					System.out.println(p[i]);
+					System.out.println(k);
 					System.out.println("antman");
 					break;
 				}
