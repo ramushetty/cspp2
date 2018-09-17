@@ -332,6 +332,7 @@ public final class Solution {
 					total += e.getMaxMarks();
 					c++;
 					i++;
+					System.out.println("batman");
 
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
@@ -339,6 +340,7 @@ public final class Solution {
 					c++;
 					
 					i++;
+					System.out.println("antman");
 				}
 			}
 			if (c != 0)
