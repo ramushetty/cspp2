@@ -301,10 +301,10 @@ public final class Solution {
 			System.out.println();
 
 		}
-		for (int i = 0; i <= countt; i++) {
-			String ss = scan.nextLine();
-			p[i] = ss;
-		}
+		// for (int i = 0; i <= countt; i++) {
+		// 	String ss = scan.nextLine();
+		// 	p[i] = ss;
+		// }
 	}
 	/**
 	 * Displays the score report.
