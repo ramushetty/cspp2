@@ -304,7 +304,7 @@ public final class Solution {
 			System.out.println(e.getquestiontext() + "(" + (e.getMaxMarks()) + ")");
 			String[] choi = e.getChoice().split(",");
 			for (int j = 0; j < choi.length; j++) {
-				System.out.print(choi[j]  + "	");
+				System.out.print(choi[j]  + "    ");
 
 			}
 			System.out.println();
