@@ -265,7 +265,7 @@ public final class Solution {
 
 						}
 					} else {
-						System.out.println("<" + tokens[0] + ">" + " does not have enough answer choices");
+						System.out.println(tokens[0] + " does not have enough answer choices");
 					}
 				} else {
 					System.out.println("Error! Malformed question");
