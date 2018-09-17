@@ -305,9 +305,8 @@ public final class Solution {
 			String[] choi = e.getChoice().split(",");
 			for (int j = 0; j < choi.length-1; j++) {
 				System.out.print(choi[j]  + "   ");
-                System.out.print(choi[choi.length-1]);
-
 			}
+            System.out.print(choi[choi.length-1]);
 			System.out.println();
 
 		}
