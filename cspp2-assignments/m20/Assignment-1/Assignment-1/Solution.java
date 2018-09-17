@@ -327,7 +327,7 @@ public final class Solution {
 		int i = 0;
 
 		for (Question e : quiz) {
-			System.out.println(e.getquestiontext());
+			System.out.println(e.getquestiontext() + "(" + e.getMaxMarks() + ")");
 			if (i < p.length - 1) {
 				if (e.getCorrectAnswer().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
