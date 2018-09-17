@@ -245,21 +245,25 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        int count = 0;
         for (int i = 0; i < z; i++) {
 	        String line = scan.nextLine();
 	        String[] tokens = line.split(":");
 	        if (tokens[0] != "" ) {
-	        	System.out.println(tokens[0]);
+	        	// System.out.println(tokens[0]);
 	        	if (tokens.length == 5) {
 	        		String[] choi = tokens[1].split(",");
 	        		if (choi.length >= 2) {
 	        			q.add(new Question(tokens[0], tokens[1], Integer.parseInt
 	        				(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+	        			count++;
 	        			// System.out.println(q.get(0).toString());
-	        			System.out.println(q.get(0).getquestiontext());
+	        			// System.out.println(q.get(0).getquestiontext());
 	        			// System.out.println(q.get(0).getPenalty());
-	        			
-	        			System.out.println(z + " questions added to Quiz");
+	        			if (count == z) {
+	        				System.out.println(z + " questions added to Quiz");
+
+	        			}
 	        		} else {
 	        			System.out.println("<" + tokens[0] + ">" + " does not have enough answer choices");
 	        		}
