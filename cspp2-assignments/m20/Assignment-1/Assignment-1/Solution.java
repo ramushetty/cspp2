@@ -258,6 +258,7 @@ public final class Solution {
 				if ((tokens.length == 5) && !(tokens[0].equals(""))) {
 					String[] choi = tokens[1].split(",");
 					if (choi.length >= 2) {
+						System.out.println(tokens[3]);
 						if (Integer.parseInt(tokens[3]) > 0) { 
 							if (Integer.parseInt(tokens[4]) <= 0) {
 								q.add(new Question(tokens[0], tokens[1], tokens[2], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
