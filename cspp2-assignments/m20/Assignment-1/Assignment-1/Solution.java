@@ -260,7 +260,8 @@ public final class Solution {
 					String[] choi = tokens[1].split(",");
 					if (choi.length >= 2) {
 						if (Integer.parseInt(tokens[3]) > 0) { 
-                            if (Integer.parseInt(tokens[3]) <= choi.length) {
+                            // System.out.println(choi.length);
+                            if (Integer.parseInt(tokens[2]) <= choi.length) {
     							if (Integer.parseInt(tokens[4]) <= 0) {
     								q.add(new Question(tokens[0], tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
     								count++;
