@@ -325,7 +325,6 @@ public final class Solution {
 		int total = 0;
 		int c = 0; 
 		int i = 0;
-		System.out.println(p[i]);
 			for (Question e : quiz) {
 				System.out.println(e.getquestiontext());
 				if (e.getCorrectAnswer().equals(p[i])) {
@@ -341,6 +340,7 @@ public final class Solution {
 					c++;
 					
 					i++;
+					System.out.println(p[i]);
 					System.out.println("antman");
 				}
 			}
