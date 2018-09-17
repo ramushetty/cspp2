@@ -335,7 +335,7 @@ public final class Solution {
 					i++;
 					c++;
 				} else {
-					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
+					System.out.println(" Wrong Answer! - Penalty: " + e.getPenalty());
 					total = total + e.getPenalty();
                     // System.out.println(e.getPenalty());
                     // System.out.println(total);
