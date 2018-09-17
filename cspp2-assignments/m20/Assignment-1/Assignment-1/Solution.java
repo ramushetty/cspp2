@@ -325,31 +325,30 @@ public final class Solution {
 		int total = 0;
 		int c = 0; 
 		int i = 0;
-		while (i >= 0) {
-
+		for (String k : p) {
 			for (Question e : quiz) {
-				System.out.println(e.getquestiontext());
+			System.out.println(e.getquestiontext());
 				if (e.getCorrectAnswer().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					c++;
-					i++;
+					
 					System.out.println("batman");
+					break;
 
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
 					c++;
 					
-					i++;
+					
 					System.out.println(p[i]);
 					System.out.println("antman");
+					break;
 				}
 			}
-			if (c == p.length - 1)
-			break;
-		}
-
+			
+		} 
 		if (c == p.length - 1)
 			System.out.println("Total Score: " + total);
     }
