@@ -208,7 +208,7 @@ public final class Solution {
 			// split the line using space
 			String[] tokens = line.split(" ");
 			// based on the list operation invoke the corresponding method
-			System.out.println(tokens[0]);
+			// System.out.println(tokens[0]);
 			// System.out.println(tokw);
 			switch (tokens[0]) {
 			case "LOAD_QUESTIONS":
