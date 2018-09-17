@@ -61,14 +61,15 @@ class Question {
 	 * @return     { description_of_the_return_value }
 	 */
 	public boolean evaluateResponse(final String choice) {
-		return false;
-	}
+        String[] ch = getChoice().split(",");
+        return ch[correctAnswer-1].equals(choice);	}
 	/**
 	 * Gets the correct answer.
 	 *
 	 * @return     The correct answer.
 	 */
 	public String getCorrectAnswer() {
+
 		return correctAnswer + "";
 	}
 	/**
@@ -329,7 +330,9 @@ public final class Solution {
 		for (Question e : quiz) {
 			System.out.println(e.getquestiontext());
 			if (i < p.length - 1) {
-				if (e.getCorrectAnswer().equals(p[i].substring(9))) {
+                System.out.println(e.getCorrectAnswer());
+                System.out.println(p[i]);
+				if (e.evaluateResponse(p[i])) {
 					System.out.println(" Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					i++;
