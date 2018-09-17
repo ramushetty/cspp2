@@ -307,7 +307,7 @@ public final class Solution {
 				System.out.print(choi[j]  + "\t");
 			}
             System.out.print(choi[choi.length-1]);
-			System.out.println();
+			System.out.println("\n");
 
 		}
 		for (int i = 0; i < countt; i++) {
