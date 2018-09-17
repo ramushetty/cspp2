@@ -327,6 +327,8 @@ public final class Solution {
 		int i = 0;
 
 		for (Question e : quiz) {
+			if (i < p.length - 1) {
+				i++;
 				if (e.getCorrectAnswer().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
@@ -334,8 +336,8 @@ public final class Solution {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
 				}
+			} 
 		} 
-		i++;
 		if (c == (p.length - 1))
 			System.out.println("Total Score: " + total);
     }
