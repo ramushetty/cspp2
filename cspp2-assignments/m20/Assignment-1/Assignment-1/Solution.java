@@ -16,7 +16,7 @@ class Question {
 	/**
 	 * { var_description }.
 	 */
-	private int correctAnswer;
+	private String correctAnswer;
 	/**
 	 * { var_description }.
 	 */
@@ -45,7 +45,7 @@ class Question {
 	 * @param      penalty1        The penalty 1
 	 */
 	Question(final String question1, final String choices1,
-	         final int correctAnswer1, final int maxMarks1, final int penalty1) {
+	         final String correctAnswer1, final int maxMarks1, final int penalty1) {
 		this.questiontext = question1;
 		this.choices = choices1;
 		this.correctAnswer = correctAnswer1;
@@ -68,7 +68,7 @@ class Question {
 	 *
 	 * @return     The correct answer.
 	 */
-	public int getCorrectAnswer() {
+	public String getCorrectAnswer() {
 		return correctAnswer;
 	}
 	/**
@@ -232,6 +232,8 @@ public final class Solution {
 			}
 		}
 	}
+	private static String[] p = new String[10];
+
 	/**
 	 * Loads questions.
 	 *
@@ -254,8 +256,7 @@ public final class Solution {
 				if ((tokens.length == 5) && !(tokens[0].equals(""))) {
 					String[] choi = tokens[1].split(",");
 					if (choi.length >= 2) {
-						q.add(new Question(tokens[0], tokens[1], Integer.parseInt
-						                   (tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+						q.add(new Question(tokens[0], tokens[1], tokens[2], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
 						count++;
 						// System.out.println(q.get(0).toString());
 						// System.out.println(q.get(0).getquestiontext());
@@ -289,14 +290,18 @@ public final class Solution {
 		// store the user respone in the question object
 		int countt = a;
 		for (Question e : quiz) {
-			System.out.println(e.getquestiontext());
+			System.out.println(e.getquestiontext() + "(" + (e.getMaxMarks()) + ")");
 			String[] choi = e.getChoice().split(",");
 			for (int j = 0; j < choi.length; j++) {
-				System.out.print(choi[j] + (e.getMaxMarks()) + "	");
+				System.out.print(choi[j]  + "	");
 
 			}
 			System.out.println();
 
+		}
+		for (int i = 0; i <= countt; i++) {
+			String ss = scan.nextLine();
+			p[i] = ss;
 		}
 	}
 	/**
@@ -306,5 +311,19 @@ public final class Solution {
 	 */
 	public static void displayScore(final ArrayList<Question> quiz) {
 		// write your code here to display the score report using quiz object.
+		int total = 0;
+		int i = 0;
+			for (Question e : quiz) {
+				if (e.getCorrectAnswer().equals(p[i])) {
+					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
+					total += e.getMaxMarks();
+				} else {
+					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
+					total -= e.getPenalty();
+				}
+			}
+			System.out.println(total);
+			i++;
+	
 	}
 }
