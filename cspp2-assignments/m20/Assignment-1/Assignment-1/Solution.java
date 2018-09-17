@@ -16,7 +16,7 @@ class Question {
 	/**
 	 * { var_description }.
 	 */
-	private String correctAnswer;
+	private int correctAnswer;
 	/**
 	 * { var_description }.
 	 */
@@ -45,7 +45,7 @@ class Question {
 	 * @param      penalty1        The penalty 1
 	 */
 	Question(final String question1, final String choices1,
-	         final String correctAnswer1, final int maxMarks1, final int penalty1) {
+	         final int correctAnswer1, final int maxMarks1, final int penalty1) {
 		this.questiontext = question1;
 		this.choices = choices1;
 		this.correctAnswer = correctAnswer1;
@@ -69,7 +69,7 @@ class Question {
 	 * @return     The correct answer.
 	 */
 	public String getCorrectAnswer() {
-		return "choice" + " " + correctAnswer;
+		return correctAnswer + "";
 	}
 	/**
 	 * Gets the question text.
@@ -260,7 +260,7 @@ public final class Solution {
 					if (choi.length >= 2) {
 						if (Integer.parseInt(tokens[3]) > 0) { 
 							if (Integer.parseInt(tokens[4]) <= 0) {
-								q.add(new Question(tokens[0], tokens[1], tokens[2], Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+								q.add(new Question(tokens[0], tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
 								count++;
 
 								if (count == z) {
@@ -329,7 +329,7 @@ public final class Solution {
 		for (Question e : quiz) {
 			System.out.println(e.getquestiontext());
 			if (i < p.length - 1) {
-				if (e.getCorrectAnswer().equals(p[i])) {
+				if (e.getCorrectAnswer().equals(p[i].substring(8))) {
 					System.out.println(" Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					i++;
