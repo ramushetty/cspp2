@@ -336,7 +336,8 @@ public final class Solution {
 					c++;
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
-					total -= e.getPenalty();
+					total = total - e.getPenalty();
+                    System.out.println(e.getPenalty());
                     System.out.println(total);
 					i++;
 					c++;
