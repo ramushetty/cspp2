@@ -340,7 +340,6 @@ public final class Solution {
 				}
 			} 
 		} 
-		if (c == (p.length - 1))
-			System.out.println("Total Score: " + total);
+	System.out.println("Total Score: " + total);
     }
 }
