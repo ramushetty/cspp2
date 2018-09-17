@@ -301,7 +301,7 @@ public final class Solution {
 			System.out.println();
 
 		}
-		for (int i = 0; i <= countt; i++) {
+		for (int i = 0; i < countt; i++) {
 			String ss = scan.nextLine();
 			p[i] = ss;
 		}
