@@ -249,7 +249,7 @@ public final class Solution {
         for (int i = 0; i < z; i++) {
 	        String line = scan.nextLine();
 	        String[] tokens = line.split(":");
-	        if (z != 0 ) {
+	        if (z > 0 ) {
 	        	// System.out.println(tokens[0]);
 	        	if (tokens.length == 5) {
 	        		String[] choi = tokens[1].split(",");
