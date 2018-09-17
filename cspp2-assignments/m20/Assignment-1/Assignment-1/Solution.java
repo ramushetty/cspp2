@@ -333,13 +333,17 @@ public final class Solution {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
 					i++;
+					c++;
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
 					i++;
+					c++;
 				}
 			} 
 		} 
-	System.out.println("Total Score: " + total);
+		if (c  == p.length -1) {
+			System.out.println("Total Score: " + total);
+		}
     }
 }
