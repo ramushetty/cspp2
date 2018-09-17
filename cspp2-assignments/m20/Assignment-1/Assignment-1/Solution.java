@@ -283,10 +283,21 @@ public final class Solution {
 	 * @param      q     The answer count
 	 */
 	public static void startQuiz(final Scanner scan,
-	                             final ArrayList<Question> quiz, final int q) {
+	                             final ArrayList<Question> quiz, final int a) {
 		// write your code here to display the quiz questions on the console.
 		// read the user responses from the console using scanner object.
 		// store the user respone in the question object
+		int countt = a;
+		for (Question e : quiz) {
+			System.out.println(e.getquestiontext());
+			String[] choi = e.getChoice().split(",");
+			for (int j = 0; j < choi.length; j++) {
+				System.out.print(choi[j] + "	");
+
+			}
+			System.out.println();
+
+		}
 	}
 	/**
 	 * Displays the score report.
