@@ -5,27 +5,27 @@ import java.util.ArrayList;
  */
 class Question {
   /**
-   * { var_description }.
+   * { question text }.
    */
   private String questiontext;
   /**
-   * { var_description }.
+   * { given choices }.
    */
   private  String choices;
   /**
-   * { var_description }.
+   * { correct answer }.
    */
   private int correctAnswer;
   /**
-   * { var_description }.
+   * { max marks allocated to question }.
    */
   private int maxMarks;
   /**
-   * { var_description }.
+   * { minus marks for wrong answer }.
    */
   private int penalty;
   /**
-   * { var_description }.
+   * { response }.
    */
   private String response;
   /**
@@ -53,11 +53,11 @@ class Question {
 
   }
   /**
-   * { function_description }.
+   * { checks for correct answer }.
    *
    * @param      choice  The choice
    *
-   * @return     { description_of_the_return_value }
+   * @return     {returns true or false }
    */
   public boolean evaluateResponse(final String choice) {
     String[] ch = getChoice().split(",");
@@ -130,57 +130,6 @@ class Question {
     return s;
   }
 }
-// /**
-//  * Class for quiz.
-//  */
-// class Quiz {
-//     /**
-//      * { var_description }.
-//      */
-//     private final int onehundred = 100;
-//     /**
-//      * { var_description }.
-//      */
-//     private Question[] questions;
-//     /**
-//      * { var_description }.
-//      */
-//     private int size;
-//     /**
-//      * Constructs the object.
-//      */
-//     Quiz() {
-
-//     }
-//     /**
-//      * Adds a question.
-//      *
-//      * @param      q     The question
-//      */
-//     public void addQuestion(final Question q) {
-
-//     }
-//     /**
-//      * Gets the question.
-//      *
-//      * @param      index  The index
-//      *
-//      * @return     The question.
-//      */
-//     public Question getQuestion(final int index) {
-//         return null;
-//     }
-//     /**
-//      * Shows the report.
-//      *
-//      * @return     { description_of_the_return_value }
-//      */
-//     public String showReport() {
-//         String s = "";
-//         return s;
-//     }
-
-// }
 /**
  * Solution class for code-eval.
  */
@@ -237,7 +186,7 @@ public final class Solution {
   }
 
   /**
-   * { var_description }.
+   * { string array to store answers }.
    */
   private static String[] p = new String[2 + 2 + 2 + 2 + 2 + 2];
 
@@ -352,8 +301,6 @@ public final class Solution {
         } else {
           System.out.println(" Wrong Answer! - Penalty: " + e.getPenalty());
           total = total + e.getPenalty();
-          // System.out.println(e.getPenalty());
-          // System.out.println(total);
           i++;
           c++;
         }
