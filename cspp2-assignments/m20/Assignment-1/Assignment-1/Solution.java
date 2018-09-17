@@ -314,16 +314,20 @@ public final class Solution {
 	public static void displayScore(final ArrayList<Question> quiz) {
 		// write your code here to display the score report using quiz object.
 		int total = 0;
+		int c = 0; 
 		int i = 0;
 			for (Question e : quiz) {
 				if (e.getCorrectAnswer().equals(p[i])) {
 					System.out.println("Correct Answer! - Marks Awarded: " + e.getMaxMarks());
 					total += e.getMaxMarks();
+					c++;
 				} else {
 					System.out.println("Wrong Answer! - Penalty: " + e.getPenalty());
 					total -= e.getPenalty();
+					c++;
 				}
 			}
+			if (c != 0)
 			System.out.println(total);
 			i++;
 	
