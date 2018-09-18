@@ -181,7 +181,7 @@ class fitbyte {
 		food.add(new foodLog(items[0], items[1], items[2], items[3]));
 	}
 	public void printfoodlog() {
-		System.out.println("Food");
+		System.out.println("Food ");
 		for (foodLog e : food) {
 			System.out.println(e);
 
@@ -239,7 +239,7 @@ class fitbyte {
 		System.out.println();
 	}
 	public void printall() {
-		System.out.println("Food");
+		System.out.println("Food ");
 		for (foodLog e : food) {
 			e.tostring();
 			
