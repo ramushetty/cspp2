@@ -223,7 +223,8 @@ class fitbyte {
 	public void printweightlog() {
 		System.out.println("Weight");
 		for (weightLog e : weight) {
-			System.out.println(e);
+			e.tostring();
+			
 		}
 		System.out.println();
 	}
