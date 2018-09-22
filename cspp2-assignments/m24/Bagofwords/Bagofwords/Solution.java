@@ -135,6 +135,7 @@ public class Solution {
 		String t = in.nextLine();
 		File folder = new File(t);
 		File[] listFiles = folder.listFiles();
+		try {
 		if (listFiles.length != 0) {
 			String fname;
 			int ss = listFiles.length + 1;
@@ -153,8 +154,9 @@ public class Solution {
 			fa.bagofwords();
 
 			fa.printall(filename, ss);
-		} else {
-			System.out.println("Empty dictinory");
+		} 
+		} catch (Exception e) {
+			System.out.println("empty directory");
 		}
 
 	}
