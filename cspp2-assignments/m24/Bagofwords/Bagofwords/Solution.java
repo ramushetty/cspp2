@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * Class for files.
  */
-class files {
+class fileS {
 	/**
 	 * { hashmap arraylist of fnames }.
 	 */
@@ -143,6 +143,9 @@ class files {
  * Class for solution.
  */
 public class Solution {
+	/**
+	 * Constructs the object.
+	 */
 	private Solution() {
 		//empty.
 	}
@@ -157,7 +160,7 @@ public class Solution {
 		Scanner in = new Scanner(System.in);
 		ArrayList<String> sa = new ArrayList<>();
 		ArrayList<String> filename = new ArrayList<>();
-		files fa = new files();
+		fileS fa = new fileS();
 
 		try  {
 			String t = in.nextLine();
