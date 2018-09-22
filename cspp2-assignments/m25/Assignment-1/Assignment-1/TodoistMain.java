@@ -51,7 +51,7 @@ class Task {
 		return status;
 	}
 	public void tostring() {
-		System.out.println(title + ", " + assignedTo + ", " + important + ", " + urgent + ", " + status);
+		System.out.println(title + ", " + assignedTo + ", " + timeToComplete+ ", " + getimportant() + ", " + geturgent() + ", " + status);
 	}
 }
 class Todoist {
