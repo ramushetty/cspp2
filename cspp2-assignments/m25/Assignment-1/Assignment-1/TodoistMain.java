@@ -86,6 +86,7 @@ class Todoist {
 	     
 		}
 	}
+	private static int count = 0;
 	public String getNextTask(String name) {
 		for (int i = 0; i < size; i++) {
 			if ("Important".equals(tas[i].getimportant())) {
@@ -100,7 +101,11 @@ class Todoist {
 				
 				}
 			} else {
-				System.out.println("null");
+				if (count == 0) {
+					System.out.println("null");
+					count++;
+				}
+
 			}
 			
 			
