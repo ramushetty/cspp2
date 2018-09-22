@@ -79,10 +79,11 @@ public final class Solution {
     }
 
     public static void main(final String[] args) throws IOException { 
+        try  {
+      
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
-        try  {
-        
+
         File f = new File(input);
         Files obj = new Files();
         File[] arrayf = f.listFiles();
