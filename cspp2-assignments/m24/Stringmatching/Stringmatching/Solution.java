@@ -122,7 +122,7 @@ public final class Solution {
             System.out.print(arrayf[i].getName() + "\t");
             for (int j = 0; j < length; j++) {
                     System.out.print(String.format(
-                        "%.f", mat[i][j]) + "\t"+ "\t");
+                        "%.1f", mat[i][j]) + "\t"+ "\t");
             }
             System.out.println();
         }
