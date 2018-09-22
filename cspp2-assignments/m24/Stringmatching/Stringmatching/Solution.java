@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 import java.io.FileReader;
 import java.lang.StringBuilder;
 import java.util.Map;
@@ -80,7 +80,7 @@ public final class Solution {
 
     public static void main(final String[] args) throws IOException { 
         try  {
-      
+
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
 
@@ -117,7 +117,7 @@ public final class Solution {
             System.out.print(arrayf[i].getName() + "\t");
             for (int j = 0; j < length; j++) {
                     System.out.print(String.format(
-                        "%.1f", mat[i][j]) + "\t"+ "\t");
+                        "%.1f", mat[i][j]) + "\t" + "\t");
             }
             System.out.println();
         }
