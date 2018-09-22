@@ -1,14 +1,35 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+/**
+ * Class for files.
+ */
 class files {
+	/**
+	 * { hashmap arraylist of fnames }.
+	 */
 	private  ArrayList<HashMap> fnames= new ArrayList<>();
+	/**
+	 * { hashmap declaration }.
+	 */
 	private HashMap<String, Integer> map;
+	/**
+	 * { arraylist for storing values }.
+	 */
     private ArrayList<String> valu = new ArrayList<>();
-
-
-
-	// void newfiles
-	public  void filter(String item) throws IOException {
+    /**
+     * { filters the given file }.
+     *
+     * @param      item         The item
+     *
+     * @throws     IOException  { returns IOException if no files found }
+     */
+	public  void filter(final String item) throws IOException {
 		map = new HashMap<String, Integer>();
 		Scanner txtfile = new Scanner(new File(item));
 		while (txtfile.hasNext()) {
@@ -32,11 +53,11 @@ class files {
 
 
 	}
-
+	/**
+	 * { bag of words  }.
+	 */
     public void bagofwords() {
-
         ArrayList<int[]> bag = new ArrayList<int[]> ();
-
         for (HashMap<String, Integer> i : fnames) {
             for (HashMap<String, Integer> j : fnames) {
                 int totalcount = 0;
@@ -46,7 +67,6 @@ class files {
 
                 for (String k : i.keySet()) {
                     count1 += i.get(k) * i.get(k);
-                    // System.out.println(i.get(k));
                     count2 = 0;
                     for (String l : j.keySet()) {
 
@@ -68,7 +88,7 @@ class files {
             valu.add(v1);
         }
     }
-    public void printall(ArrayList<String> filenames, int size) {
+    public void printall(final ArrayList<String> filenames, final int size) {
     	int max = 0;
     	String file1 = "";
     	String file2 = "";
@@ -77,7 +97,7 @@ class files {
     	int  k = 0;
     	int k2 = -1;
     	int v = 0;
-    	for (int i = 0; i< size; i++) {
+    	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < size; j++) {
     			if (i == 0 && j == 0) {
 	    			mat[i][j] = "\t" + "\t";
@@ -94,10 +114,8 @@ class files {
 	    					mat[i][j] = filenames.get(k2) + "\t";
 		    			} else {
 
-		    					mat[i][j] = valu.get(v) + "\t";
-			    				// int temp = Integer.parseInt(valu.get(v)).replaceAll("\t", "");
+		    					mat[i][j] = valu.get(v) + "\t" + "\t";
 			    				String temp = valu.get(v);
-			    				// System.out.println(valu.get(v));
 			    				int temp2 = Integer.parseInt(temp);
 		    					if (max <= temp2 && temp2 != 100) {
 		    						max = temp2;
@@ -114,7 +132,7 @@ class files {
     		k = 0;
     	}
 
-    	for (int i = 0; i< size; i++) {
+    	for (int i = 0; i < size; i++) {
     		for (int j = 0; j < size; j++) {
     			System.out.print(mat[i][j]);
     			
@@ -124,9 +142,21 @@ class files {
     	System.out.println("Maximum similarity is between " + file2 + " and " + file1);
     }
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
-	public static void main(String[] args) throws IOException {
+	private Solution() {
+		//empty.
+	}
+	/**
+	 * { main function }.
+	 *
+	 * @param      args         The arguments
+	 *
+	 * @throws     IOException  { exception }
+	 */
+	public static void main(final String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		ArrayList<String> sa = new ArrayList<>();
 		ArrayList<String> filename = new ArrayList<>();
@@ -139,10 +169,10 @@ public class Solution {
 			if (listFiles.length != 0) {
 				String fname;
 				int ss = listFiles.length + 1;
-				for(File file: listFiles){
+				for (File file : listFiles) {
 					filename.add(file.getName());
 					if (file.isFile()) {
-						sa.add(t+'\\'+file.getName());
+						sa.add(t + '\\' + file.getName());
 					}
 
 				}
