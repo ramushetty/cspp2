@@ -6,12 +6,24 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * Class for files.
+ */
 class Files {
-  
+    /**
+     * Constructs the object.
+     */
     Files() {
     }
-   
+   /**
+    * { filters files  }.
+    *
+    * @param      file         The file
+    *
+    * @return     { returns filtered file }
+    *
+    * @throws     IOException  { exception }
+    */
     public static String file(final File file) throws IOException {
         String str = "";
        
@@ -26,7 +38,13 @@ class Files {
         
         return str;
     }
-
+    /**
+     * { filters and counts }.
+     *
+     * @param      text  The text
+     *
+     * @return     { returns the hash map }
+     */
     public Map filter(final String text) {
         text.toLowerCase();
         text.replaceAll("[0-9_]", "");
@@ -43,7 +61,14 @@ class Files {
     }
         return map;
     }
-
+    /**
+     * { largest common sub string  }.
+     *
+     * @param      file1  The file 1
+     * @param      file2  The file 2
+     *
+     * @return     { return_value the percentage of two files}
+     */
     public double lcs(final String file1, final String file2) {
         int file1len = file1.length();
         int file2len = file2.length();
@@ -71,13 +96,23 @@ class Files {
         return lcs;
     }
 }
-
+/**
+ * { Solution class }
+ */
 public final class Solution {
-
+    /**
+     * Constructs the object.
+     */
     private Solution() {
-
+      //empty.
     }
-
+    /**
+     * { main function }.
+     *
+     * @param      args         The arguments
+     *
+     * @throws     IOException  { exception }
+     */
     public static void main(final String[] args) throws IOException { 
         try  {
 
