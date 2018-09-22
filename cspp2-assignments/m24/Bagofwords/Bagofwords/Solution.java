@@ -132,10 +132,9 @@ public class Solution {
 		ArrayList<String> filename = new ArrayList<>();
 		files fa = new files();
 
-		String t = in.nextLine();
+		String t = in.next();
 		File folder = new File(t);
 		File[] listFiles = folder.listFiles();
-		try {
 		if (listFiles.length != 0) {
 			String fname;
 			int ss = listFiles.length + 1;
@@ -154,8 +153,7 @@ public class Solution {
 			fa.bagofwords();
 
 			fa.printall(filename, ss);
-		} 
-		} catch (Exception e) {
+		} else {
 			System.out.println("empty directory");
 		}
 
