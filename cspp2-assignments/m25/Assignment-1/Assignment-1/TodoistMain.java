@@ -100,7 +100,7 @@ class Todoist {
 				
 				}
 			}
-			return null;
+			
 			
 		}
 		return null;
