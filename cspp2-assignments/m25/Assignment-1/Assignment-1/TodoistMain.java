@@ -24,7 +24,9 @@ class Task {
 		this.important = imp;
 		this.urgent = urg;
 		this.status = stat;
+		
 	}
+
 	String gettitle() {
 		return title;
 	}
@@ -57,18 +59,33 @@ class Task {
 class Todoist {
 	// Task t = new Task();
 	Task[] tas;
+	int size;
 	Todoist() {
-		tas = new Task[10];
+		tas = new Task[20];
+		size = 0;
+
 	}
-	// public testAddTask(Task item) {
-
-	// }
-	// public void testTask(ArrayList<String> item) {
-	// 	ArrayList<Task> t = new ArrayList<>();
-	// 	t.add(item);
-
-
-	// }
+	public void testAddTask(Task item) {
+		add(item);
+	}
+	public void add(Task t) {
+		if (size == tas.length) {
+     		resize();
+    	}
+		tas[size++] = t;
+	}
+	public void resize() {
+    	tas = Arrays.copyOf(tas, 2 * tas.length);
+  	}
+	public void printall() {
+	    if (size == 0) {
+	      System.out.println("[]");
+	    }
+	    for (int i = 0; i < size; i++) {
+	    	tas[i].tostring();
+	     
+		}
+	}
 }
 /**
  * Class for todoist main.
@@ -80,6 +97,7 @@ public class TodoistMain {
      */
     public static void startTest() {
         Todoist todo = new Todoist();
+        Task ts = new Task();
         ArrayList<Task> ta;
         Task fi = new Task();
         Scanner s = new Scanner(System.in);
@@ -97,12 +115,19 @@ public class TodoistMain {
 			        ta.add(new Task(title, assignedTo, timeToComplete, important, urgent, status));
 			        ta.get(0).tostring();
                 break;
-                // case "add-task":
-                //     testAddTask(todo, tokens);
-                // break;
-                // // case "print-todoist":
-                // //     System.out.println(todo);
-                // break;
+                case "add-task":
+                	String titl = tokens[1];
+			        String assignedT = tokens[2];
+			        int timeToComplet = Integer.parseInt(tokens[3]);
+			        boolean importan = tokens[4].equals("y");
+			        boolean urgen = tokens[5].equals("y");
+			        String statu = tokens[6];
+			        ts = new Task(titl, assignedT, timeToComplet, importan, urgen, statu);
+                    todo.testAddTask(ts);
+                break;
+                case "print-todoist":
+                    todo.printall();
+                break;
                 // case "get-next":
                 //     System.out.println(todo.getNextTask(tokens[1]));
                 // break;
