@@ -7,17 +7,17 @@ import java.io.IOException;
  * Class for files.
  */
 class fileS {
-	/**
-	 * { hashmap arraylist of fnames }.
-	 */
-	private  ArrayList<HashMap> fnames= new ArrayList<>();
-	/**
-	 * { hashmap declaration }.
-	 */
-	private HashMap<String, Integer> map;
-	/**
-	 * { arraylist for storing values }.
-	 */
+  /**
+   * { hashmap arraylist of fnames }.
+   */
+  private  ArrayList<HashMap> fnames= new ArrayList<>();
+  /**
+   * { hashmap declaration }.
+   */
+  private HashMap<String, Integer> map;
+  /**
+   * { arraylist for storing values }.
+   */
     private ArrayList<String> valu = new ArrayList<>();
     /**
      * { filters the given file }.
@@ -26,33 +26,33 @@ class fileS {
      *
      * @throws     IOException  { returns IOException if no files found }
      */
-	public  void filter(final String item) throws IOException {
-		map = new HashMap<String, Integer>();
-		Scanner txtfile = new Scanner(new File(item));
-		while (txtfile.hasNext()) {
-			String[] word = txtfile.next().split(" ");
-			if (word.length != 0) {
-				for (int i = 0; i < word.length; i++) {
-				if (map.containsKey(word[i])) {
-					int count = map.get(word[i]) + 1;
-					map.put(word[i], count);
-				} else {
-					map.put(word[i], 1);
-				}
-				}
-			} else {
-				map.put("0", 0);
-			}
-			
-		}
-		txtfile.close();
-		fnames.add(map);
+  public  void filter(final String item) throws IOException {
+    map = new HashMap<String, Integer>();
+    Scanner txtfile = new Scanner(new File(item));
+    while (txtfile.hasNext()) {
+      String[] word = txtfile.next().split(" ");
+      if (word.length != 0) {
+        for (int i = 0; i < word.length; i++) {
+        if (map.containsKey(word[i])) {
+          int count = map.get(word[i]) + 1;
+          map.put(word[i], count);
+        } else {
+          map.put(word[i], 1);
+        }
+        }
+      } else {
+        map.put("0", 0);
+      }
+      
+    }
+    txtfile.close();
+    fnames.add(map);
 
 
-	}
-	/**
-	 * { bag of words  }.
-	 */
+  }
+  /**
+   * { bag of words  }.
+   */
     public void bagofwords() {
         ArrayList<int[]> bag = new ArrayList<int[]> ();
         for (HashMap<String, Integer> i : fnames) {
@@ -81,117 +81,117 @@ class fileS {
         }
         String v1;
         for (int[] x : bag) {
-        	v1 = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100) + "";
+          v1 = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100) + "";
             valu.add(v1);
         }
     }
     public void printall(final ArrayList<String> filenames, final int size) {
-    	int max = 0;
-    	String file1 = "";
-    	String file2 = "";
+      int max = 0;
+      String file1 = "";
+      String file2 = "";
 
-    	String[][] mat = new String[size][size];
-    	int  k = 0;
-    	int k2 = -1;
-    	int v = 0;
-    	for (int i = 0; i < size; i++) {
-    		for (int j = 0; j < size; j++) {
-    			if (i == 0 && j == 0) {
-	    			mat[i][j] = "\t" + "\t";
-	    		} else {
+      String[][] mat = new String[size][size];
+      int  k = 0;
+      int k2 = -1;
+      int v = 0;
+      for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+          if (i == 0 && j == 0) {
+            mat[i][j] = "\t" + "\t";
+          } else {
 
-	    			if (i == 0 && j == j) {
+            if (i == 0 && j == j) {
 
-		    			mat[i][j] = filenames.get(k) + "\t";
-		    			k++;
-	    			} else {
-	    				if (i >= 1 && j == 0) {
-	    					k2++;
+              mat[i][j] = filenames.get(k) + "\t";
+              k++;
+            } else {
+              if (i >= 1 && j == 0) {
+                k2++;
 
-	    					mat[i][j] = filenames.get(k2) + "\t";
-		    			} else {
+                mat[i][j] = filenames.get(k2) + "\t";
+              } else {
 
-		    					mat[i][j] = valu.get(v) + "\t" + "\t";
-			    				String temp = valu.get(v);
-			    				int temp2 = Integer.parseInt(temp);
-		    					if (max <= temp2 && temp2 != 100) {
-		    						max = temp2;
-		    						file1 = mat[i][0];
-		    						file2 = mat[0][j];
-		    					}
-			    				v++;
+                  mat[i][j] = valu.get(v) + "\t" + "\t";
+                  String temp = valu.get(v);
+                  int temp2 = Integer.parseInt(temp);
+                  if (max <= temp2 && temp2 != 100) {
+                    max = temp2;
+                    file1 = mat[i][0];
+                    file2 = mat[0][j];
+                  }
+                  v++;
 
 
-		    			}
-	    			}
-	    		}
-    		}
-    		k = 0;
-    	}
+              }
+            }
+          }
+        }
+        k = 0;
+      }
 
-    	for (int i = 0; i < size; i++) {
-    		for (int j = 0; j < size; j++) {
-    			System.out.print(mat[i][j]);
-    			
-    		}
-    		System.out.println();
-    	}
-    	System.out.println("Maximum similarity is between " + file2 + " and " + file1);
+      for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+          System.out.print(mat[i][j]);
+          
+        }
+        System.out.println();
+      }
+      System.out.println("Maximum similarity is between " + file2 + " and " + file1);
     }
 }
 /**
  * Class for solution.
  */
 public class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
-		//empty.
-	}
-	/**
-	 * { main function }.
-	 *
-	 * @param      args         The arguments
-	 *
-	 * @throws     IOException  { exception }
-	 */
-	public static void main(final String[] args) throws IOException {
-		Scanner in = new Scanner(System.in);
-		ArrayList<String> sa = new ArrayList<>();
-		ArrayList<String> filename = new ArrayList<>();
-		fileS fa = new fileS();
+  /**
+   * Constructs the object.
+   */
+  private Solution() {
+    //empty.
+  }
+  /**
+   * { main function }.
+   *
+   * @param      args         The arguments
+   *
+   * @throws     IOException  { exception }
+   */
+  public static void main(final String[] args) throws IOException {
+    Scanner in = new Scanner(System.in);
+    ArrayList<String> sa = new ArrayList<>();
+    ArrayList<String> filename = new ArrayList<>();
+    fileS fa = new fileS();
 
-		try  {
-			String t = in.nextLine();
-			File folder = new File(t);
-			File[] listFiles = folder.listFiles();
-			if (listFiles.length != 0) {
-				String fname;
-				int ss = listFiles.length + 1;
-				for (File file : listFiles) {
-					filename.add(file.getName());
-					if (file.isFile()) {
-						sa.add(t + '\\' + file.getName());
-					}
+    try  {
+      String t = in.nextLine();
+      File folder = new File(t);
+      File[] listFiles = folder.listFiles();
+      if (listFiles.length != 0) {
+        String fname;
+        int ss = listFiles.length + 1;
+        for (File file : listFiles) {
+          filename.add(file.getName());
+          if (file.isFile()) {
+            sa.add(t + '\\' + file.getName());
+          }
 
-				}
+        }
 
 
-				for (String f : sa) {
-					fa.filter(f);
-				}
-				fa.bagofwords();
+        for (String f : sa) {
+          fa.filter(f);
+        }
+        fa.bagofwords();
 
-				fa.printall(filename, ss);
-			} else {
-				System.out.println("empty directory");
-			}
-		} catch (Exception ex) {
-			System.out.println("empty directory");
-		}
+        fa.printall(filename, ss);
+      } else {
+        System.out.println("empty directory");
+      }
+    } catch (Exception ex) {
+      System.out.println("empty directory");
+    }
 
-	}
+  }
 
 
 
