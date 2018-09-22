@@ -64,7 +64,7 @@ class files {
         }
         String v1;
         for (int[] x : bag) {
-        	v1 = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100) + "\t";
+        	v1 = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100) + "";
             valu.add(v1);
         }
     }
@@ -94,14 +94,17 @@ class files {
 	    					mat[i][j] = filenames.get(k2) + "\t";
 		    			} else {
 
-		    					mat[i][j] = valu.get(v);
-			    				v++;
-
-		    					if (max <= Integer.parseInt(mat[i][j])) {
-		    						max = Integer.parseInt(mat[i][j]);
+		    					mat[i][j] = valu.get(v) + "\t";
+			    				// int temp = Integer.parseInt(valu.get(v)).replaceAll("\t", "");
+			    				String temp = valu.get(v);
+			    				// System.out.println(valu.get(v));
+			    				int temp2 = Integer.parseInt(temp);
+		    					if (max <= temp2 && temp2 != 100) {
+		    						max = temp2;
 		    						file1 = mat[i][0];
 		    						file2 = mat[0][j];
 		    					}
+			    				v++;
 
 
 		    			}
@@ -118,7 +121,7 @@ class files {
     		}
     		System.out.println();
     	}
-    	System.out.println("Maximum similarity is between " + file1 + " and " + file2);
+    	System.out.println("Maximum similarity is between " + file2 + " and " + file1);
     }
 }
 
