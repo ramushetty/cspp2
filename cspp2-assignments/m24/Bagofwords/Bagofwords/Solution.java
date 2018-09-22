@@ -86,6 +86,12 @@ class fileS {
       valu.add(v1);
     }
   }
+  /**
+   * { prints values in matrix form }.
+   *
+   * @param      filenames  The filenames
+   * @param      size       The size
+   */
   public void printall(final ArrayList<String> filenames, final int size) {
     int max = 0;
     String file1 = "";
@@ -115,7 +121,7 @@ class fileS {
               mat[i][j] = valu.get(v) + "\t" + "\t";
               String temp = valu.get(v);
               int temp2 = Integer.parseInt(temp);
-              if (max <= temp2 && temp2 != 100) {
+              if (max <= temp2 && temp2 != NUM) {
                 max = temp2;
                 file1 = mat[i][0];
                 file2 = mat[0][j];
@@ -137,13 +143,14 @@ class fileS {
       }
       System.out.println();
     }
-    System.out.println("Maximum similarity is between " + file2 + " and " + file1);
+    System.out.println(
+      "Maximum similarity is between " + file2 + " and " + file1);
   }
 }
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
   /**
    * Constructs the object.
    */
