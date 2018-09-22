@@ -6,19 +6,12 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
 
-/**this class is to maintain.
-*complete details of two files.
-*/
+
 class Files {
-    /** this is an empty constructor.
-    */
+  
     Files() {
     }
-    /**this method is to convert the.
-    *file document text to string
-    *@param file File
-    *@return str returns string of that text.
-    */
+   
     public static String file(final File file) throws IOException {
         String str = "";
        
@@ -88,9 +81,10 @@ public final class Solution {
     public static void main(final String[] args) throws IOException { 
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
+        try  {
+        
         File f = new File(input);
         Files obj = new Files();
-        try  {
         File[] arrayf = f.listFiles();
         int length = arrayf.length;
         double maxValue = 0;
