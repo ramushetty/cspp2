@@ -132,28 +132,32 @@ public class Solution {
 		ArrayList<String> filename = new ArrayList<>();
 		files fa = new files();
 
-		String t = in.next();
-		File folder = new File(t);
-		File[] listFiles = folder.listFiles();
-		if (listFiles.length != 0) {
-			String fname;
-			int ss = listFiles.length + 1;
-			for(File file: listFiles){
-				filename.add(file.getName());
-				if (file.isFile()) {
-					sa.add(t+'\\'+file.getName());
+		try  {
+			String t = in.nextLine();
+			File folder = new File(t);
+			File[] listFiles = folder.listFiles();
+			if (listFiles.length != 0) {
+				String fname;
+				int ss = listFiles.length + 1;
+				for(File file: listFiles){
+					filename.add(file.getName());
+					if (file.isFile()) {
+						sa.add(t+'\\'+file.getName());
+					}
+
 				}
 
+
+				for (String f : sa) {
+					fa.filter(f);
+				}
+				fa.bagofwords();
+
+				fa.printall(filename, ss);
+			} else {
+				System.out.println("empty directory");
 			}
-
-
-			for (String f : sa) {
-				fa.filter(f);
-			}
-			fa.bagofwords();
-
-			fa.printall(filename, ss);
-		} else {
+		} catch (Exception ex) {
 			System.out.println("empty directory");
 		}
 
