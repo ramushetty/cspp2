@@ -92,13 +92,16 @@ class Todoist {
 				if (name.equals(tas[i].getassignedTo())) {
 					if ("todo".equals(tas[i].getstatus())){
 						if ("done".equals(tas[i].getstatus())) {
-							return null;
+							System.out.println("null");
 						}
 						tas[i].tostring();
 						break;
 					}
 				
 				}
+			} else {
+				System.out.println("null");
+				break;
 			}
 			
 			
