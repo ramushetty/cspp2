@@ -25,7 +25,6 @@ class Files {
     */
     public static String file(final File file) throws IOException {
         String str = "";
-       
             Scanner input = new Scanner(new FileReader(file));
             StringBuilder text = new StringBuilder();
             while (input.hasNext()) {
@@ -34,7 +33,6 @@ class Files {
             }
             input.close();
             str = text.toString();
-        
         return str;
     }
     /**
@@ -96,7 +94,7 @@ class Files {
     }
 }
 /**
- * { Solution class }
+ * { Solution class }.
  */
 public final class Solution {
     /**
@@ -112,7 +110,7 @@ public final class Solution {
      *
      * @throws     IOException  { exception }
      */
-    public static void main(final String[] args) throws IOException { 
+    public static void main(final String[] args) throws IOException {
         try  {
 
         Scanner scan = new Scanner(System.in);
