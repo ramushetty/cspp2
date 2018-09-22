@@ -86,6 +86,26 @@ class Todoist {
 	     
 		}
 	}
+	public String getNextTask(String name) {
+		for (int i = 0; i < size; i++) {
+			if ("Important".equals(tas[i].getimportant())) {
+				if (name.equals(tas[i].getassignedTo())) {
+					if ("todo".equals(tas[i].getstatus())){
+						if ("done".equals(tas[i].getstatus())) {
+							return null;
+						}
+						tas[i].tostring();
+						break;
+					}
+				
+				}
+			}
+			return null;
+			
+		}
+		return null;
+
+	}
 }
 /**
  * Class for todoist main.
@@ -128,9 +148,9 @@ public class TodoistMain {
                 case "print-todoist":
                     todo.printall();
                 break;
-                // case "get-next":
-                //     System.out.println(todo.getNextTask(tokens[1]));
-                // break;
+                case "get-next":
+                    todo.getNextTask(tokens[1]);
+                break;
                 // case "get-next-n":
                 //     int n = Integer.parseInt(tokens[2]);
                 //     Task[] tasks = todo.getNextTask(tokens[1], n);
