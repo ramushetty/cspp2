@@ -174,7 +174,6 @@ public final class Solution {
       String t = in.nextLine();
       File folder = new File(t);
       File[] listFiles = folder.listFiles();
-      if (listFiles.length != 0) {
         String fname;
         int ss = listFiles.length + 1;
         for (File file : listFiles) {
@@ -190,9 +189,7 @@ public final class Solution {
         fa.bagofwords();
 
         fa.printall(filename, ss);
-      } else {
-        System.out.println("empty directory");
-      }
+
     } catch (Exception ex) {
       System.out.println("empty directory");
     }
