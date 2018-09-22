@@ -54,7 +54,7 @@ class Files {
     public double lcs(final String file1, final String file2) {
         int file1len = file1.length();
         int file2len = file2.length();
-        final int hundred = 100;
+        final int num = 100;
 
         double tlen = file1len + file2len;
         int max = 0;
@@ -74,7 +74,7 @@ class Files {
                 }
             }
         }
-        lcs = (((max * 2) / tlen) * hundred);
+        lcs = (((max * 2) / tlen) * num);
         return lcs;
     }
 }
@@ -94,13 +94,13 @@ public final class Solution {
         File[] arrayf = f.listFiles();
         int length = arrayf.length;
         double maxValue = 0;
-        final int hundred = 100;
+        final int num = 100;
         String result = "";
         double[][] mat = new double[length][length];
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
-                    mat[i][j] = hundred;
+                    mat[i][j] = num;
                 } else {
                     mat[i][j] = obj.lcs(
                         obj.file(arrayf[i]), obj.file(arrayf[j]));
@@ -122,7 +122,7 @@ public final class Solution {
             System.out.print(arrayf[i].getName() + "\t");
             for (int j = 0; j < length; j++) {
                     System.out.print(String.format(
-                        "%.1f", mat[i][j]) + "\t"+ "\t");
+                        "%.f", mat[i][j]) + "\t"+ "\t");
             }
             System.out.println();
         }
